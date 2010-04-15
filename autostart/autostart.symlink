@@ -1,0 +1,20 @@
+# start tilda
+tilda &
+
+# start devilspie
+devilspie &
+
+sleep 1
+
+# autostart gvim
+#gvim -c 'set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)\ -\ GVIM1'
+#gvim -c 'set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)\ -\ GVIM2'
+
+# wait ten seconds before start, so Ubuntu can connect to WLAN
+sleep 9
+
+# start vpn-wlan
+/etc/networkmanager/dispatcher.d/02vpn_start
+
+# launch ubuntuone
+ubuntuone-launch

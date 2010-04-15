@@ -1,0 +1,10 @@
+(if
+	(and
+		(is (window_class) "Gvim")
+		(contains (window_name) "GVIM1")
+	)
+	(begin
+		(geometry "960x1080+0+0")
+		(set_workspace 2)
+	)
+)

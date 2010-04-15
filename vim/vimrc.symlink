@@ -1,0 +1,229 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ==================================================
+" Pathogen-Plugin to load other plugins
+" ==================================================
+call pathogen#infect()
+
+" ==================================================
+" General Settings
+" ==================================================
+
+" Change the leader key to ,
+let mapleader = ","
+
+let g:tex_flavor='latex'
+" Set vim to be non-compatible to vi
+set nocompatible
+" Set how many lines of history VIM has to remember
+set history=1000
+" Show linenumbers
+set number
+" Autoindent code
+set autoindent
+" Use utf-8
+set encoding=utf-8
+" Always show status line
+set laststatus=2
+" Auto reread new changes
+set autoread
+" Disable folding
+set nofoldenable
+" Only highlight 150 first characters of a line for performance reasons
+set synmaxcol=150
+" Use fast terminal
+set ttyfast
+" Enable filetype plugin
+set filetype=on
+filetype plugin on
+filetype indent off
+" Use four spaces for one tab
+set tabstop=4
+set shiftwidth=4
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+" Maintain more context around the cursor
+set scrolloff=4
+" Stifle many interruptive prompts
+set shortmess=atI
+
+" Do not indent comments on next line.
+autocmd BufNewFile,BufRead * setlocal formatoptions=tnq
+
+
+" Do not indent when pasting: press F11 before and again, afterwards
+"set pastetoggle=<F11>
+
+" ==================================================
+" Terminal Settings
+" ==================================================
+" Use 256 Colors in Terminal
+set t_Co=256
+" allow mouse usage
+set mouse=a
+
+" ==================================================
+" Autocompletion settings
+" ==================================================
+
+" turn on
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+" automatically safe files when switching between them or when leaving vim
+set autowriteall
+autocmd FocusLost * silent! :wa
+autocmd TabLeave * silent! :wa
+
+" Automatically open NERDTree when no files where specified
+"autocmd vimenter * if !argc() | NERDTree | endif
+
+" ==================================================
+" Search
+" ==================================================
+" Incremental search
+set incsearch
+" Highlight search
+set hlsearch
+" Show matches
+set showmatch
+" Intelligent searching
+" If searching for an all-lowercase string search will be case-insensitive, but if one or more characters is uppercase search will be case-sensitive.
+set ignorecase
+set smartcase
+
+" Textmate style display of invisible characters (tab and newline)
+set listchars=tab:▸\ ,eol:¬
+"set list
+" Highlight active line
+set cursorline
+
+" Do not create swap files
+"set noswapfile
+" Store temporary files in a central spot
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Use last one for latex-suite
+set grepprg=ack-grep\ -a
+set grepprg=grep\ -nH\ $*
+
+noremap ' `
+noremap ` '
+
+" Scroll viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
+" Show whitespace
+nmap <silent> <leader>s :set nolist!<CR>
+
+
+map <CR> o<ESC>k
+map <S-Enter> O<Esc>j
+
+map <F2> :SessionList<CR>
+map <F3> :execute 'NERDTreeToggle ' . getcwd()<CR>
+" Map Ctrl-C and Ctrl-V
+map <C-V> "+gP
+cmap <C-V> <C-R>+
+vnoremap <C-C> "+y
+
+" use j and i in autocompletion list to select list item
+inoremap <expr> j    ((pumvisible()) ? ("\<C-n>") : ("j"))
+inoremap <expr> k    ((pumvisible()) ? ("\<C-p>") : ("k"))
+" this mapping will change the behavior of the <Enter> key when the popup menu is visible: in that case the Enter key will simply select the highlighted menu item, just as <C-Y> does.
+
+set completeopt=menuone,longest
+
+" Rot-13 when pressing <F12>
+map <F12> ggVGg?
+
+map <F5> :make<CR>
+map <F6> :make run<CR>
+
+" This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started. 
+nmap . .`[
+
+" This gets rid of the distracting highlighting once I’ve found what I’m looking for.
+nnoremap <leader><space> :noh<CR>
+
+" Auto align :'s
+map <leader>: :Tab /:\zs<CR>
+map <leader>= :Tab /=<CR>
+
+nmap <C-left> gT
+nmap <C-right> gt
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap j gj
+nnoremap k gk
+
+"cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+
+" use colorscheme
+if has('gui_running')
+  syntax enable
+  set background=light
+  colorscheme solarized
+else
+  colorscheme fruidle
+endif
+
+" Remove toolbar
+set guioptions-=T
+" Remove menu
+set guioptions-=m
+" Remove scrollbar
+set guioptions-=l
+set guioptions-=r
+set guioptions-=b
+
+
+
+" ==================================================
+" Show tab number in tabs
+" ==================================================
+set showtabline=2
+function! GuiTabLabel()
+  let label = ''
+  let bufnrlist = tabpagebuflist(v:lnum)
+  for bufnr in bufnrlist
+    if getbufvar(bufnr, "&modified")
+      let label = '+'
+      break
+    endif
+  endfor
+  let label .= v:lnum.': '
+  let name = bufname(bufnrlist[tabpagewinnr(v:lnum) - 1])
+  if name == ''
+    if &buftype=='quickfix'
+      let name = '[Quickfix List]'
+    else
+      let name = '[No Name]'
+    endif
+  else
+    let name = fnamemodify(name,":t")
+  endif
+  let label .= name
+  let wincount = tabpagewinnr(v:lnum, '$')
+  return label . '  [' . wincount . ']'
+endfunction
+set guitablabel=%{GuiTabLabel()}
+" ==================================================
