@@ -1,22 +1,19 @@
-# shortcut to this dotfiles path is $ZSH
-export ZSH=$HOME/.dotfiles
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-# your project folder that we can `c [tab]` to
-export PROJECTS=~/Code
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# shortcut to this dotfiles path is $ZSH
+export DOTFILES=$HOME/dotfiles
 
 # source every .zsh file in this rep
-for config_file ($ZSH/**/*.zsh) source $config_file
-
-# use .localrc for SUPER SECRET CRAP that you don't
-# want in your public, versioned repo.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
+for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
 
-# load every completion after autocomplete loads
-for config_file ($ZSH/**/completion.zsh) source $config_file

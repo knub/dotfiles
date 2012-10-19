@@ -1,0 +1,8 @@
+(if
+	(and
+		(is (window_class) "Gvim")
+		(not (contains (window_name) "GVIM1"))
+	)
+	(begin
+	)
+)
