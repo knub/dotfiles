@@ -85,10 +85,12 @@ TERM screen
 TERM screen-256color
 TERM screen-256color-bce
 TERM screen-bce
-TERM screen.linux
 TERM screen-w
+TERM screen.linux
+TERM screen.xterm-new
 TERM vt100
 TERM xterm
+TERM xterm-new
 TERM xterm-16color
 TERM xterm-256color
 TERM xterm-88color
@@ -191,6 +193,7 @@ EXEC 01;31  # Unix
 .c 32
 .C 32
 .cc 32
+.cpp 32
 .cxx 32
 .objc 32
 .sh 32
