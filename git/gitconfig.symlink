@@ -15,5 +15,6 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+		mergeoptions = --no-ff
 [merge]
         tool = meld
