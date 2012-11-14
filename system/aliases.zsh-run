@@ -27,3 +27,5 @@ alias -s java=$EDITOR
 alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
 
+# http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
+alias cls='printf "\033c"'

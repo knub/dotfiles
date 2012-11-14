@@ -16,8 +16,8 @@ map  "+gP
 snoremap  b<BS>
 nnoremap  3
 snoremap % b<BS>%
-nnoremap ' `
 xnoremap ' `
+nnoremap ' `
 snoremap ' b<BS>'
 onoremap ' `
 map ,= :Tab /=
@@ -31,8 +31,8 @@ nmap \\\ <Plug>CommentaryLine
 nmap \\ <Plug>Commentary
 xmap \\ <Plug>Commentary
 snoremap ^ b<BS>^
-nnoremap ` '
 xnoremap ` '
+nnoremap ` '
 snoremap ` b<BS>`
 onoremap ` '
 nmap gx <Plug>NetrwBrowseX
@@ -74,8 +74,6 @@ set completeopt=menuone,longest
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set fileencodings=ucs-bom,utf-8,default,latin1
 set grepprg=grep\ -nH\ $*
-set guioptions=aegiLt
-set guitablabel=%{GuiTabLabel()}
 set helplang=en
 set hidden
 set history=1000
@@ -101,7 +99,7 @@ set window=37
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/Ubuntu\ One/Uni/Beauty\ is\ our\ Business/paper
+cd ~/
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -121,7 +119,6 @@ argglobal
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
-setlocal balloonexpr=
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -167,8 +164,8 @@ setlocal formatexpr=
 setlocal formatoptions=tnq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=\\\\input\\|\\\\include{
 setlocal includeexpr=substitute(v:fname,\ '^.\\{-}{\\|}.*',\ '',\ 'g')
 setlocal indentexpr=
@@ -222,12 +219,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 265 - ((27 * winheight(0) + 26) / 52)
+let s:l = 1 - ((0 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-265
-normal! 022l
+1
+normal! 0
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
