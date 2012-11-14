@@ -80,12 +80,14 @@ set history=1000
 set hlsearch
 set ignorecase
 set incsearch
+set isident=@,48-57,_,192-255,$
 set laststatus=2
 set listchars=tab:▸\ ,eol:¬
 set mouse=a
+set omnifunc=htmlcomplete#CompleteTags
 set printoptions=paper:letter
 set ruler
-set runtimepath=~/.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/snipmate-snippets,~/.vim/bundle/tabular,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-snipmate,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/tabular/after,~/.vim/bundle/vim-snipmate/after,~/.vim/after,~/.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/snipmate-snippets,~/.vim/bundle/tabular,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-snipmate,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/tabular/after,~/.vim/bundle/vim-snipmate/after,~/.vim/after
+set runtimepath=~/.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/snipmate-snippets,~/.vim/bundle/tabular,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-coffee-script,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-snipmate,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/tabular/after,~/.vim/bundle/vim-coffee-script/after,~/.vim/bundle/vim-snipmate/after,~/.vim/after,~/.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/snipmate-snippets,~/.vim/bundle/tabular,~/.vim/bundle/tlib_vim,~/.vim/bundle/vim-addon-mw-utils,~/.vim/bundle/vim-coffee-script,~/.vim/bundle/vim-colors-solarized,~/.vim/bundle/vim-commentary,~/.vim/bundle/vim-fugitive,~/.vim/bundle/vim-snipmate,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/bundle/tabular/after,~/.vim/bundle/vim-coffee-script/after,~/.vim/bundle/vim-snipmate/after,~/.vim/after
 set scrolloff=4
 set shiftwidth=4
 set shortmess=atI
@@ -98,11 +100,12 @@ set tabstop=4
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/smm2013-group3/src
+cd ~/smm2013-group3
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
+<<<<<<< Updated upstream
 badd +20 main/scala/smm2013group3/KickerTwitter.scala
 badd +1 main/scala/smm2013group3/http/Http.scala
 badd +1 ~/smm2013-group3/main.scala
@@ -577,6 +580,13 @@ normal! zt
 25
 normal! 0
 tabedit main/scala/smm2013group3/http/Http.scala
+=======
+badd +13 src/main/scala/smm2013group3/FussballdatenDownloader.scala
+badd +2 download/http:______www.fussballdaten.de___bundesliga___1964___1
+badd +1 download/http:______www.fussballdaten.de___bundesliga___1995___4
+silent! argdel *
+edit src/main/scala/smm2013group3/FussballdatenDownloader.scala
+>>>>>>> Stashed changes
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -686,13 +696,17 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 26) / 52)
+let s:l = 56 - ((44 * winheight(0) + 26) / 52)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
+56
 normal! 0
+<<<<<<< Updated upstream
 tabnext 2
+=======
+tabnext 1
+>>>>>>> Stashed changes
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
