@@ -1,0 +1,15 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"BracketHighlighter",
+		"Git",
+		"Gitignore",
+		"Package Control",
+		"Rake",
+		"Simple Rails Navigator",
+		"SublimeBlockCursor",
+		"Sublimerge",
+		"Theme - Soda"
+	]
+}

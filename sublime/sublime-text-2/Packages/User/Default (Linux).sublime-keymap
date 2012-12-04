@@ -1,0 +1,80 @@
+[
+	/* ctrl+tab should use tab order, not stack order */
+	{ "keys": ["ctrl+tab"], "command": "next_view" },
+	{ "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+	/* Map gt and gT to next/previous tab as in vim*/
+	{
+		"keys": ["g", "t"],
+		"command": "next_view",
+		"context": [{"key": "setting.command_mode"}]
+	},
+	{
+		"keys": ["g", "T"],
+		"command": "prev_view",
+		"context": [{"key": "setting.command_mode"}]
+	},
+	/* Show file open dialog on ctrl+o */
+	{
+		"keys": ["ctrl+o"],
+		"command": "show_overlay",
+		"args": {"overlay": "goto", "show_files": true}
+	},
+	/* ctrl+w deletes last word in insert mode */
+	{
+		"keys": ["ctrl+w"],
+		"command": "delete_word",
+		"args": { "forward": false },
+		"context":
+		[
+			{ "key": "setting.command_mode", "operand": false },
+			{ "key": "setting.is_widget", "operand": false }
+		]
+	},
+	/*
+	 * enter in command mode adds new line under current line.
+	 * shift+enter adds a line above
+	 */
+	{
+		"keys": ["enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/Default/Add Line.sublime-macro"},
+		"context": [{"key": "setting.command_mode"}]
+	},
+	{
+		"keys": ["shift+enter"],
+		"command": "run_macro_file",
+		"args": {"file": "Packages/Default/Add Line Before.sublime-macro"},
+		"context": [{"key": "setting.command_mode"}]
+	},
+	/* comment in/out on ctrl+7 */
+	{
+		"keys": ["ctrl+7"],
+		"command": "toggle_comment",
+		"args": { "block": false }
+	},
+	/* shift+up and shift+down move by pages */
+	{
+		"keys": ["shift+up"],
+		"command": "move",
+		"args": {"by": "pages", "forward": false, "amount": 5}
+		/* only in insert mode
+		"context":
+		[
+			{ "key": "setting.command_mode", "operand": false },
+			{ "key": "setting.is_widget", "operand": false }
+		]
+		*/
+	},
+	{
+		"keys": ["shift+down"],
+		"command": "move",
+		"args": {"by": "pages", "forward": true, "amount": 5}
+		/* only in insert mode
+		"context":
+		[
+			{ "key": "setting.command_mode", "operand": false },
+			{ "key": "setting.is_widget", "operand": false }
+		]
+		*/
+	}
+]
