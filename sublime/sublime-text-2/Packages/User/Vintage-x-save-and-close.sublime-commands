@@ -1,0 +1,7 @@
+[
+	{
+		"caption": ":x - Save and close file",
+		"command": "save",
+		"command": "close"
+	}
+]

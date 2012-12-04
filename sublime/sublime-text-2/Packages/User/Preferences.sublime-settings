@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/User/Solarized (light).tmTheme",
+	"font_face": "Ubuntu Mono",
+	"font_size": 16,
+	"ignored_packages":
+	[
+	],
+	"soda_classic_tabs": true,
+	"theme": "Soda Light.sublime-theme",
+	"vintage_start_in_command_mode": true,
+    // Set to true to removing trailing white space on save
+    "trim_trailing_white_space_on_save": false
+}
