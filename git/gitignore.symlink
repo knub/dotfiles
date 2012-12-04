@@ -3,3 +3,5 @@
 *~
 *.swp
 *.rbc
+*.sublime-project
+*.sublime-workspace
