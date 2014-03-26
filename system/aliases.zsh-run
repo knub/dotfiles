@@ -4,12 +4,11 @@ alias i='sudo apt-get install'
 alias pdflatex='pdflatex -halt-on-error'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
-alias baz="bzr"
 alias e='evince'
-alias grep="grep -r --color -n -e"
 alias k="sudo kill -9"
 alias o='gnome-open'
 alias sl="sl -e -F"
+alias lisa="ls -lisah"
 
 export EDITOR=vim
 export PAGER=less

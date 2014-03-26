@@ -1,4 +1,0 @@
-{
-	"cmd": ["rake"],
-	"selector": "source.ruby"
-}
