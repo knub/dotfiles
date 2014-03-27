@@ -1,4 +1,4 @@
-alias checkupdates='sudo apt-get update && sudo apt-get upgrade'
+alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
 alias i='sudo apt-get install'
 
 alias pdflatex='pdflatex -halt-on-error'
