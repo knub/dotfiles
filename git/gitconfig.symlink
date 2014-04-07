@@ -18,3 +18,5 @@
 	mergeoptions = --no-ff
 [merge]
 	tool = meld
+[push]
+	default = simple
