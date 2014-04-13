@@ -1,1 +1,2 @@
 export PATH="$DOTFILES/bin:$PATH"
+export PATH="$PATH:/opt/idea-IU-135.480/bin"
