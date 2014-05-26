@@ -1,0 +1,3 @@
+#!/bin/sh
+
+php ~/Repositories/wordpress-stanbol/composer.phar $@
