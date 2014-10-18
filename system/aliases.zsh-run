@@ -2,6 +2,7 @@ alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && su
 alias i='sudo apt-get install'
 
 alias pdflatex='pdflatex -halt-on-error'
+alias startvpn='sudo /usr/sbin/iked'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias e='evince'
