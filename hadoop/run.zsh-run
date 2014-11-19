@@ -1,4 +1,4 @@
-export HADOOP_HOME="/home/knub/Programme/hadoop-2.2.0"
+export HADOOP_HOME="/home/knub/Programme/hadoop-2.5.1"
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
-export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
+#export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib"
 export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
