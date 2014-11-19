@@ -9,7 +9,7 @@ alias e='evince'
 alias k="sudo kill -9"
 alias o='gnome-open'
 alias sl="sl -e -F"
-alias lisa="ls -lisah"
+alias lisa="ls -lisahF"
 
 export EDITOR=vim
 export PAGER=less
