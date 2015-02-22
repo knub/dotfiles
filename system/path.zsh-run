@@ -1,3 +1,2 @@
 export PATH="$DOTFILES/bin:$PATH"
-export PATH="$PATH:/opt/idea-IU-135.480/bin"
-export PATH="$PATH:/opt/gradle-1.11/bin"
+export PATH="$PATH:/opt/idea-IU-139.659.2/bin"
