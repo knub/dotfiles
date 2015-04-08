@@ -1,1 +1,1 @@
-export PATH=$PATH:/opt/scala-2.10.4/bin
+export PATH=$PATH:/opt/scala-2.11.5/bin
