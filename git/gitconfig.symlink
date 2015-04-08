@@ -16,6 +16,7 @@
 	excludesfile = ~/.gitignore
 	editor = vim
 	mergeoptions = --no-ff
+	autocrlf = input
 [merge]
 	tool = meld
 [push]
