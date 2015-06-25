@@ -8,6 +8,28 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+" ==================================================
+" Plugins
+" ==================================================
+" Let Vundle handle itself
+Plugin 'gmarik/Vundle.vim'
+" CtrlP for quick file search
+Plugin 'kien/ctrlp.vim'
+" EasyMotion, started with <Leader><Leader> allows to move by quick search end
+" points
+Plugin 'easymotion/vim-easymotion'
+" Allow quick alignment to :, = etc.
+Plugin 'godlygeek/tabular'
+" EditorConfig
+Plugin 'editorconfig/editorconfig-vim'
+" Cool status bar
+Plugin 'bling/vim-airline'
+" Color parentheses in different colors for quick visual matching
+Plugin 'kien/rainbow_parentheses.vim'
+" Show indentation guides
+Plugin 'nathanaelkane/vim-indent-guides'
+" Scala
+Plugin 'derekwyatt/vim-scala'
 call vundle#end()
 
 " ==================================================
@@ -33,11 +55,11 @@ set hidden
 " Avoid 'Press ENTER to continue ..'
 set shortmess=atI
 " Do not indent when pasting: press F11 before and again, afterwards
-set pastetoggle=<F11>
+set pastetoggle=<F12>
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started. 
+" This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started.
 nmap . .`[
 " Disable folding - I do not like it
 set nofoldenable
@@ -111,3 +133,31 @@ nmap <CR> o<ESC>k
 " Auto align :'s
 map <leader>: :Tab /:\zs<CR>
 map <leader>= :Tab /=<CR>
+
+" ==================================================
+" Rainbow Parenthesis Plugin
+" ==================================================
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces

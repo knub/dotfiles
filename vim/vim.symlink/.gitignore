@@ -1,0 +1,2 @@
+# Ignore all plugins, because they can be reinstalled via Vundle
+bundle/
