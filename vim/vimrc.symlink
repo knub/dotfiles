@@ -1,13 +1,19 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==================================================
+" Start Vundle
+" ==================================================
+
+" Set vim to be non-compatible to vi
+set nocompatible
+" Vundle setup
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+call vundle#end()
 
 " ==================================================
 " General Settings
 " ==================================================
 
-" Set vim to be non-compatible to vi
-set nocompatible
 " Change the leader key to ,
 let mapleader = ","
 
