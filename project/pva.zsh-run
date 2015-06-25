@@ -1,0 +1,3 @@
+function play-pva-video() {
+	ssh mp cat /opt/data_sets/video_sbd_dataset/videos/$1 | mplayer -
+}
