@@ -2,7 +2,8 @@ alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && su
 alias i='sudo apt-get install'
 
 alias pdflatex='pdflatex -halt-on-error'
-alias startvpn='sudo /usr/sbin/iked'
+alias startvpn='snx -s 141.89.226.132 -u stefan.bunk'
+alias calc='gcalccmd'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias e='evince'
@@ -11,6 +12,7 @@ alias o='gnome-open'
 alias sl="sl -e -F"
 alias lisa="ls -lisahF"
 alias gradle="./gradlew"
+alias qtcreator="/opt/Qt5.4.1/Tools/QtCreator/bin/qtcreator.sh"
 
 export EDITOR=vim
 export PAGER=less
