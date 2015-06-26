@@ -1,4 +1,3 @@
 export ANDROID_HOME="/opt/android-sdk"
 export CAFFE_ROOT="/opt/caffe-tmbo"
-#export Caffe_INCLUDE_DIRS="$CAFFE_ROOT/cmake/include"
 export PYTHONPATH="$CAFFE_ROOT/python"

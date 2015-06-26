@@ -2,20 +2,12 @@
 	name = Stefan Bunk
 	email = stefan.bunk@googlemail.com
 [alias]
-	lg = log
-	st = status
-	timeline = log --oneline --graph --decorate
-	co = checkout
-	promote = !$ZSH/bin/git-promote
-	wtf     = !$ZSH/bin/git-wtf
-	rank-contributers = !$ZSH/bin/git-rank-contributers
 	count   = !git shortlog -sn
 [color]
 	ui = true
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
-	mergeoptions = --no-ff
 	autocrlf = input
 [merge]
 	tool = meld

@@ -3,7 +3,6 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias re-source="source ~/.zshrc"
 alias cdcoheelflink="cd ~/Repositories/coheel-stratosphere"
 alias cdbookly="cd ~/Repositories/Bookly"
 alias cdheuristic="cd ~/Repositories/heuristic_optimization"
