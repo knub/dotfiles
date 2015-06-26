@@ -26,10 +26,16 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'bling/vim-airline'
 " Color parentheses in different colors for quick visual matching
 Plugin 'kien/rainbow_parentheses.vim'
-" Show indentation guides
+" Show indentation guides, start with <Leader>ig
 Plugin 'nathanaelkane/vim-indent-guides'
 " Scala
 Plugin 'derekwyatt/vim-scala'
+" Protobuffer
+Plugin 'uarun/vim-protobuf'
+" Switch between .c and .h
+Plugin 'vim-scripts/a.vim'
+" Multiple cursors like Sublime
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 
 " ==================================================
@@ -161,3 +167,16 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+
+" ==================================================
+" Prototxt Plugin
+" ==================================================
+augroup filetype
+   au! BufRead,BufNewFile *.prototxt setfiletype proto
+augroup end
+" ==================================================
+" Multicursor Plugin
+" ==================================================
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
