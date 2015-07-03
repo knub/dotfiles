@@ -36,6 +36,8 @@ Plugin 'uarun/vim-protobuf'
 Plugin 'vim-scripts/a.vim'
 " Multiple cursors like Sublime
 Plugin 'terryma/vim-multiple-cursors'
+" Git
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 " ==================================================
