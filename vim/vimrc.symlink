@@ -38,6 +38,8 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'terryma/vim-multiple-cursors'
 " Git
 Plugin 'tpope/vim-fugitive'
+" Multiple searches at the same time with :Search
+Plugin 'MultipleSearch'
 call vundle#end()
 
 " ==================================================
@@ -115,6 +117,11 @@ autocmd TabLeave * silent! :wa
 set filetype=on
 filetype plugin on
 filetype indent off
+" Automaticall open new files on the right and below
+set filetype=on
+set splitright
+set splitbelow
+
 
 " ==================================================
 " Search
