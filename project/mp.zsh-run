@@ -1,5 +1,5 @@
 function play-mp-video() {
-	ssh mp cat /opt/data_sets/UCF-101/videos/$1 | mplayer -
+	ssh mp cat /extra/data_sets/UCF-101/videos/$1 | mplayer -
 }
 function sync-video-classification() {
 	scp -r mp:/home/mpss2015/video-classification/image_classification/src /home/knub/Repositories/video-classification/image_classification/
