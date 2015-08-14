@@ -1,0 +1,1 @@
+Split the device-independent stuff from the device-dependent stuff (e.g. all the HOME's etc.)
