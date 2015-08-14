@@ -14,7 +14,6 @@ alias o='gnome-open'
 alias sl="sl -e -F"
 alias lisa="ls -lisahF"
 alias gradle="./gradlew"
-alias qtcreator="/opt/Qt5.4.1/Tools/QtCreator/bin/qtcreator.sh"
 
 export EDITOR=vim
 export PAGER=less
