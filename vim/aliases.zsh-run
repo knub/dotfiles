@@ -1,4 +1,0 @@
-alias vim='vim -p'
-alias gvim='gvim -p --servername GVIM'
-alias gvimo='gvim --servername GVIM --remote-tab'
-alias vimgitignore="vim .gitignore"

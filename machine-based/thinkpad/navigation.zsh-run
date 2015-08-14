@@ -1,0 +1,6 @@
+alias cdcoheelflink="cd ~/Repositories/coheel-stratosphere"
+alias cdbookly="cd ~/Repositories/Bookly"
+alias cdheuristic="cd ~/Repositories/heuristic_optimization"
+alias cddm="cd ~/Repositories/dm"
+alias cdsbd="cd ~/Repositories/shot-boundary-detection"
+alias cdmp="cd ~/Repositories/video-classification"
