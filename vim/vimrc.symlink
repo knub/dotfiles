@@ -40,6 +40,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 " Multiple searches at the same time with :Search
 Plugin 'MultipleSearch'
+" Gradle
+Plugin 'tfnico/vim-gradle'
 call vundle#end()
 
 " ==================================================
