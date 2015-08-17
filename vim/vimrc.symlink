@@ -115,6 +115,8 @@ set autoread
 set autowriteall
 autocmd FocusLost * silent! :wa
 autocmd TabLeave * silent! :wa
+" Automatically detect markdown files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Automatically detect filetype
 set filetype=on
 filetype plugin on
