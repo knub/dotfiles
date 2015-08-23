@@ -42,6 +42,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'MultipleSearch'
 " Gradle
 Plugin 'tfnico/vim-gradle'
+" Autocompletion!
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 " ==================================================
