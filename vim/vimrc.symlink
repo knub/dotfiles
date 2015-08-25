@@ -43,7 +43,7 @@ Plugin 'MultipleSearch'
 " Gradle
 Plugin 'tfnico/vim-gradle'
 " Autocompletion!
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 " Rust plugin
 Plugin 'wting/rust.vim'
 
