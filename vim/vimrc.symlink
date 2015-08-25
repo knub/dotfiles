@@ -44,6 +44,9 @@ Plugin 'MultipleSearch'
 Plugin 'tfnico/vim-gradle'
 " Autocompletion!
 Plugin 'Valloric/YouCompleteMe'
+" Rust plugin
+Plugin 'wting/rust.vim'
+
 call vundle#end()
 
 " ==================================================
