@@ -1,6 +1,5 @@
+alias cdalgo='cd ~/Repositories/algorithmix_homework'
+alias cdoxygen='cd ~/Repositories/oxygen'
 alias cdcoheelflink="cd ~/Repositories/coheel-stratosphere"
 alias cdbookly="cd ~/Repositories/Bookly"
-alias cdheuristic="cd ~/Repositories/heuristic_optimization"
-alias cddm="cd ~/Repositories/dm"
-alias cdsbd="cd ~/Repositories/shot-boundary-detection"
-alias cdmp="cd ~/Repositories/video-classification"
+alias cdsentence="cd ~/Repositories/sentence-boundary-detection-nn"
