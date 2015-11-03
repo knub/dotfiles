@@ -46,6 +46,7 @@ Plugin 'tfnico/vim-gradle'
 "Plugin 'Valloric/YouCompleteMe'
 " Rust plugin
 Plugin 'wting/rust.vim'
+Plugin 'cespare/vim-toml'
 
 call vundle#end()
 
