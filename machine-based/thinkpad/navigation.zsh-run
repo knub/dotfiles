@@ -3,3 +3,4 @@ alias cdoxygen='cd ~/Repositories/oxygen'
 alias cdcoheelflink="cd ~/Repositories/coheel-stratosphere"
 alias cdbookly="cd ~/Repositories/Bookly"
 alias cdsentence="cd ~/Repositories/sentence-boundary-detection-nn"
+alias cdtesting="cd ~/Repositories/onehundredandeighty-testing"
