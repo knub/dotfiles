@@ -51,6 +51,8 @@ Plugin 'cespare/vim-toml'
 Plugin 'tpope/vim-commentary'
 " Pressing star in visual mode searches for the current selection
 Plugin 'thinca/vim-visualstar'
+" Show markers
+Plugin 'kshenoy/vim-signature'
 
 call vundle#end()
 
