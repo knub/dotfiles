@@ -1,6 +1,7 @@
 ## PATH
 export PATH="$PATH:/opt/scala-2.11.5/bin"
-export PATH="$PATH:/opt/idea-IU-139.659.2/bin"
+export PATH="$PATH:/opt/idea-IU-143.1184.17/bin"
+export PATH="$PATH:/home/knub/.cargo/bin"
 
 ## JAVA HOME
 #export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
