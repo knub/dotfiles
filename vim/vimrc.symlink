@@ -53,6 +53,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'thinca/vim-visualstar'
 " Show markers
 Plugin 'kshenoy/vim-signature'
+" Encryption
+Plugin 'openssl.vim'
 
 call vundle#end()
 
