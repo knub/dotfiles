@@ -34,7 +34,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'uarun/vim-protobuf'
 " Switch between .c and .h
 Plugin 'vim-scripts/a.vim'
-" Multiple cursors like Sublime
+" Multiple cursors like Sublime with Ctrl-n
 Plugin 'terryma/vim-multiple-cursors'
 " Git
 Plugin 'tpope/vim-fugitive'
