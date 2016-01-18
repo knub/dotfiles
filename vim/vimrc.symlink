@@ -182,6 +182,18 @@ let g:gundo_preview_height = 20
 nnoremap <F5> :GundoToggle<CR>
 
 " ==================================================
+" CtrlP Plugin
+" ==================================================
+
+  " Using \v allows to write () instead of \(\) and | instead of \|, see
+  " http://vimdoc.sourceforge.net/htmldoc/pattern.html
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v\.(git|hg|svn)|target$',
+    \ 'file': '\v\.(exe|so)$',
+    \ 'link': 'some_bad_symbolic_links',
+\ }
+
+" ==================================================
 " Rainbow Parenthesis Plugin
 " ==================================================
 let g:rbpt_colorpairs = [
