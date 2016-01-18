@@ -18,3 +18,4 @@ alias gb='git branch'
 alias gs='git status -sb'
 alias gt='git stash'
 alias gtlrt='git stash && git pull --rebase && git stash pop'
+alias vimexclude="vim + .git/info/exclude"
