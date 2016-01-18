@@ -18,5 +18,9 @@ export ANDROID_HOME="/opt/android-sdk"
 export CAFFE_ROOT="/opt/caffe-tmbo"
 export PYTHONPATH="$CAFFE_ROOT/python"
 
+## Yaafe
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages/yaafelib
+
 ## QtCreator
 alias qtcreator="/opt/Qt5.4.1/Tools/QtCreator/bin/qtcreator.sh"
