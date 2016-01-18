@@ -59,7 +59,8 @@ Plugin 'openssl.vim'
 " Handle large files by turning off some settings
 "Plugin 'LargeFile' " STOP: This plugin makes loading large files slower in my tests
 Plugin 'mhinz/vim-hugefile'
-let g:hugefile_trigger_size = '10000' " files over x MB are considered as large
+let g:hugefile_trigger_size = '10000' " files over x MB are considered as large, NOTE: Apparently this is ignored for :/
+" Visible git undo tree
 Plugin 'sjl/gundo.vim'
 
 call vundle#end()
@@ -179,14 +180,27 @@ map <leader>= :Tab /=<CR>
 " Start Gundo plugin
 let g:gundo_width = 60
 let g:gundo_preview_height = 20
-nnoremap <F5> :GundoToggle<CR>
+nnoremap <leader>u :GundoToggle<CR>
 
 " ==================================================
 " CtrlP Plugin
 " ==================================================
+" Order matching files top to bottom
+let g:ctrlp_match_window = 'bottom,order:ttb'
+" Open files in new buffers
+let g:ctrlp_switch_buffer = 0
+" Allows to change working directory and make CtrlP respect that change
+let g:ctrlp_working_path = 0
+" Very fast file enumeration
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
-  " Using \v allows to write () instead of \(\) and | instead of \|, see
-  " http://vimdoc.sourceforge.net/htmldoc/pattern.html
+" Custom ignores for CtrlP
+" IMPORTANT NOTE: As we have a custom ctrlp_user_command, this custom ignore
+" will not be used. Still, keeping this in the file in case there is no ag
+" installed on the machine and we need basic CtrlP.
+"
+" Using \v allows to write () instead of \(\) and | instead of \|, see
+" http://vimdoc.sourceforge.net/htmldoc/pattern.html
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v\.(git|hg|svn)|target$',
     \ 'file': '\v\.(exe|so)$',
