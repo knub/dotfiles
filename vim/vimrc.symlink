@@ -23,7 +23,8 @@ Plugin 'godlygeek/tabular'
 " EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
 " Cool status bar
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
 " Color parentheses in different colors for quick visual matching
 Plugin 'kien/rainbow_parentheses.vim'
 " Show indentation guides, start with <Leader>ig
