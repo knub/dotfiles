@@ -65,11 +65,10 @@ call vundle#end()
 
 " Change the leader key to ,
 let mapleader = ","
-
 """ Some vim defaults everyone needs
 " Use 256 Colors in Terminal
 set t_Co=256
-" allow mouse usage
+" Allow mouse usage
 set mouse=a
 " Use fast terminal
 set ttyfast
@@ -77,7 +76,7 @@ set ttyfast
 set laststatus=2
 " Use utf-8
 set encoding=utf-8
-" http://items.sjbach.com/319/configuring-vim-right
+" Manage multiple buffers efficiently: http://items.sjbach.com/319/configuring-vim-right
 set hidden
 " Avoid 'Press ENTER to continue ..'
 set shortmess=atI
@@ -88,14 +87,14 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " This changes the behavior of the very useful . command to leave the cursor at the point where it was before editing started.
 nmap . .`[
-" Disable folding - I do not like it
-set nofoldenable
+" Set terminal title
+set title
 
 
 " ==================================================
 " Editing
 " ==================================================
-" use colorscheme
+" Use colorscheme
 colorscheme fruidle
 " Set how many lines of history VIM has to remember
 set history=1000
@@ -107,6 +106,8 @@ set cursorline
 set autoindent
 " Only highlight n first characters of a line for performance reasons
 set synmaxcol=300
+" Redraw only when need to: for example not in the middle of macros
+set lazyredraw
 
 " Map Ctrl-C and Ctrl-V
 map <C-V> "+gP
@@ -126,10 +127,6 @@ autocmd BufNewFile,BufRead * setlocal formatoptions=tnq
 " ==================================================
 " Auto reread new changes
 set autoread
-" automatically safe files when switching between them or when leaving vim
-set autowriteall
-autocmd FocusLost * silent! :wa
-autocmd TabLeave * silent! :wa
 " Automatically detect markdown files
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " Automatically detect filetype
@@ -140,6 +137,8 @@ filetype indent off
 set filetype=on
 set splitright
 set splitbelow
+" Show how many options there are when autocompleting
+set wildmenu
 
 
 " ==================================================
@@ -149,7 +148,7 @@ set splitbelow
 set incsearch
 " Highlight search
 set hlsearch
-" Show matches
+" Show matches braces
 set showmatch
 " Intelligent searching
 " If searching for an all-lowercase string search will be case-insensitive, but if one or more characters is uppercase search will be case-sensitive.
