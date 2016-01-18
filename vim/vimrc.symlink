@@ -56,6 +56,10 @@ Plugin 'thinca/vim-visualstar'
 Plugin 'kshenoy/vim-signature'
 " Encryption
 Plugin 'openssl.vim'
+" Handle large files by turning off some settings
+"Plugin 'LargeFile' " STOP: This plugin makes loading large files slower in my tests
+Plugin 'mhinz/vim-hugefile'
+let g:hugefile_trigger_size = '10000' " files over x MB are considered as large
 Plugin 'sjl/gundo.vim'
 
 call vundle#end()
