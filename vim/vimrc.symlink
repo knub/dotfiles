@@ -56,6 +56,7 @@ Plugin 'thinca/vim-visualstar'
 Plugin 'kshenoy/vim-signature'
 " Encryption
 Plugin 'openssl.vim'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end()
 
@@ -166,6 +167,15 @@ nmap <CR> o<ESC>k
 " Auto align :'s
 map <leader>: :Tab /:\zs<CR>
 map <leader>= :Tab /=<CR>
+
+
+" ==================================================
+" Gundo Plugin
+" ==================================================
+" Start Gundo plugin
+let g:gundo_width = 60
+let g:gundo_preview_height = 20
+nnoremap <F5> :GundoToggle<CR>
 
 " ==================================================
 " Rainbow Parenthesis Plugin
