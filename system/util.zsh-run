@@ -1,5 +1,9 @@
 function swap() { mv $1 $1._tmp; mv $2 $1; mv $1._tmp $2; }
 
+function watchdir() {
+	watch ls -lisah $1
+}
+
 function filesort() {
 	for i in "$@"; do
 		LC_ALL=C sort -o $i $i
