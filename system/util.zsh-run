@@ -4,6 +4,13 @@ function watchdir() {
 	watch ls -lisah $1
 }
 
+function findfile() {
+	ag -l --nocolor --hidden -g "$1"
+}
+function vimopen() {
+	vim $(findfile $1)
+}
+
 function filesort() {
 	for i in "$@"; do
 		LC_ALL=C sort -o $i $i
