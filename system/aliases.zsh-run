@@ -8,6 +8,7 @@ alias startvpn='snx -s 141.89.226.132 -u stefan.bunk'
 alias calc='gcalccmd'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
+alias wcl="wc -l"
 alias e='evince'
 alias k="sudo kill -9"
 alias o='gnome-open'
