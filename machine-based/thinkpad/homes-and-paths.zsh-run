@@ -14,9 +14,12 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 ## ANDROID
 export ANDROID_HOME="/opt/android-sdk"
 
-## CAFFE
+## Caffe
 export CAFFE_ROOT="/opt/caffe-tmbo"
 export PYTHONPATH="$CAFFE_ROOT/python"
+
+## Sentence boundary detection
+export PYTHONPATH="/home/knub/Repositories/sentence-boundary-detection-nn/python:$PYTHONPATH"
 
 ## Yaafe
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
