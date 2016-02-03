@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ "$#" -eq 3 ] ; then
+	head -n $1 $2 > $2.head
+	head -n $1 $3 > $3.head
+	meld $2.head $3.head
+	rm $2.head $3.head
+elif [ "$#" -eq 4 ] ; then
+	tail -n +$2 $3 > $3.tail
+	tail -n +$2 $4 > $4.tail
+	head -n $1 $3.tail > $3.head
+	head -n $1 $4.tail > $4.head
+	meld $3.head $4.head
+	rm $3.tail $4.tail $3.head $4.head
+else
+	echo "Usage: head_meld nr_head_lines [skip_lines] file1 file2"
+	echo "       This will start a meld window comparing the first 'nr_lines' lines in 'file1' and 'file2', optionally skipping the first 'nr_skip_lines' lines."
+	exit 1
+fi
+
