@@ -62,6 +62,8 @@ Plugin 'mhinz/vim-hugefile'
 let g:hugefile_trigger_size = '10000' " files over x MB are considered as large, NOTE: Apparently this is ignored for :/
 " Visible git undo tree
 Plugin 'sjl/gundo.vim'
+" Python
+Plugin 'klen/python-mode'
 
 call vundle#end()
 
