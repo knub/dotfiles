@@ -1,11 +1,13 @@
 alias re-source="source ~/.zshrc"
 
 alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
-alias i='sudo apt-get install'
 
 alias pdflatex='pdflatex -halt-on-error'
 alias startvpn='snx -s 141.89.226.132 -u stefan.bunk'
 alias calc='gcalccmd'
+
+# http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
+alias cls='printf "\033c"'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias wcl="wc -l"
@@ -16,11 +18,15 @@ alias sl="sl -e -F"
 alias lisa="ls -lisahF"
 alias gradle="./gradlew"
 
+function cpv() {
+	rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --
+}
+
 export EDITOR=vim
 export PAGER=less
 export BROWSER=google-chrome
 
-# Dateiendungen automatisch mit dem jeweiligen Programm öffnen
+# Automatically open files with correct application
 alias -s html=$BROWSER
 alias -s org=$BROWSER
 alias -s php=$EDITOR
@@ -31,6 +37,3 @@ alias -s bz2=tar -xjvf
 alias -s java=$EDITOR
 alias -s txt=$EDITOR
 alias -s PKGBUILD=$EDITOR
-
-# http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
-alias cls='printf "\033c"'

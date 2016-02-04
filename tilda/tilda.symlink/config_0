@@ -1,7 +1,7 @@
 tilda_config_version = "0.9.6"
 # image = ""
 # command = ""
-font = "DejaVu Sans Mono 12"
+font = "Hack 12"
 key = "F1"
 addtab_key = "<Shift><Control>t"
 fullscreen_key = "F11"
