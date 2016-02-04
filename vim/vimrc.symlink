@@ -66,6 +66,9 @@ Plugin 'sjl/gundo.vim'
 Plugin 'klen/python-mode'
 " Gitignore
 Plugin 'rdolgushin/gitignore.vim'
+" Time tracking
+Bundle 'wakatime/vim-wakatime'
+
 
 call vundle#end()
 
