@@ -4,17 +4,31 @@ function watchdir() {
 	watch ls -lisah $1
 }
 
-function findfile() {
+# find file
+function ff() {
 	ag -l --nocolor --hidden -g "$1"
 }
 function vimopen() {
-	vim $(findfile $1)
+	vim $(ff $1)
 }
 
 function filesort() {
 	for i in "$@"; do
+		# LC_ALL to do simple byte wise sorting
 		LC_ALL=C sort -o $i $i
 	done;
+}
+
+function take() {
+  mkdir -p $1
+  cd $1
+}
+
+
+# Copies the pathname of the current directory to the system clipboard
+function clipdir {
+	emulate -L zsh
+	pwd | xclip -selection clip
 }
 
 setopt interactivecomments
