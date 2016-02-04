@@ -3,6 +3,8 @@ export DOTFILES=$HOME/dotfiles # reexport DOTFILES, so we get the short name
 ### Antigen
 source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
+antigen bundle arzzen/calc.plugin.zsh
+antigen bundle djui/alias-tips
 antigen bundle extract
 antigen bundle mvn
 antigen bundle vagrant
