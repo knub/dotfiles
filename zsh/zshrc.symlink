@@ -1,18 +1,13 @@
-# Path to your oh-my-zsh configuration.
+# Configuration of oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
-
 ZSH_THEME="robbyrussell"
-
-plugins=(git gem rails3 ruby mvn)
-
+plugins=(extract mvn vagrant)
 source $ZSH/oh-my-zsh.sh
 
-# shortcut to this dotfiles path is $ZSH
+# Source the dotfiles
 export DOTFILES=$HOME/dotfiles
-
-# source every .zsh file in this rep
 for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 
-# initialize autocomplete here, otherwise functions won't be loaded
+# Start autocompletion
 autoload -U compinit
 compinit
