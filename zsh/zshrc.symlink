@@ -1,11 +1,14 @@
-# Configuration of oh-my-zsh
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-plugins=(extract mvn vagrant)
-source $ZSH/oh-my-zsh.sh
+export DOTFILES=$HOME/dotfiles
+
+source $DOTFILES/zsh/antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle extract
+antigen bundle mvn
+antigen bundle vagrant
+antigen bundle web-search
+antigen apply
 
 # Source the dotfiles
-export DOTFILES=$HOME/dotfiles
 for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 
 # Start autocompletion
