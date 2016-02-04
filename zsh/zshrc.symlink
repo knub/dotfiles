@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/dotfiles
 
+### Antigen
 source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle extract
@@ -8,9 +9,9 @@ antigen bundle vagrant
 antigen bundle web-search
 antigen apply
 
-# Source the dotfiles
+# Source all my *.zsh-run files
 for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 
 # Start autocompletion
-autoload -U compinit
-compinit
+#autoload -U compinit
+#compinit
