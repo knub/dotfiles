@@ -93,7 +93,7 @@ set encoding=utf-8
 set hidden
 " Avoid 'Press ENTER to continue ..'
 set shortmess=atI
-" Do not indent when pasting: press F11 before and again, afterwards
+" Do not indent when pasting: press F12 before and again, afterwards
 set pastetoggle=<F12>
 " Store temporary files in a central spot
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp

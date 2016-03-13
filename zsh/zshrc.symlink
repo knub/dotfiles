@@ -9,6 +9,9 @@ antigen bundle extract
 antigen bundle mvn
 antigen bundle vagrant
 antigen bundle web-search
+#antigen theme kafeitu
+#antigen-bundle arialdomartini/oh-my-git
+#antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 antigen apply
 
 # Replace known paths with their variable short form
@@ -20,3 +23,7 @@ for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 # Start autocompletion
 # autoload -U compinit
 # compinit
+
+source "$HOME/.qfc/bin/qfc.sh"
+qfc_quick_command 'cd' '\C-b' 'cd $0'
+qfc_quick_command 'vim' '\C-p' 'vim $0'
