@@ -25,3 +25,5 @@ texlive
 libsqlite3-0 libjpeg8 libpng12-0 exiv2 libtiff5 curl gphoto2 gnome-keyring fop openexr
 darktable
 
+# https://github.com/p-e-w/maybe
+sudo pip install maybe
