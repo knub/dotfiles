@@ -69,7 +69,8 @@ Plugin 'klen/python-mode'
 Plugin 'rdolgushin/gitignore.vim'
 " Time tracking
 "Bundle 'wakatime/vim-wakatime'
-
+" Syntax highlighting for Dockerfiles
+Plugin 'ekalinin/dockerfile.vim'
 
 call vundle#end()
 
