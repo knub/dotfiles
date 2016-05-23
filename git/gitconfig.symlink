@@ -9,6 +9,8 @@
 	excludesfile = ~/.gitignore
 	editor = vim
 	autocrlf = input
+[diff]
+	noprefix = true
 [merge]
 	tool = meld
 [push]
