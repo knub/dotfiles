@@ -27,3 +27,8 @@ darktable
 
 # https://github.com/p-e-w/maybe
 sudo pip install maybe
+rake
+zsh
+tilda
+gnome-tweak-tool
+faience-theme
