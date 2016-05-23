@@ -1,6 +1,7 @@
 ### Antigen
 source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
+antigen bundle dirhistory
 antigen bundle extract
 antigen bundle mvn
 antigen bundle vagrant
