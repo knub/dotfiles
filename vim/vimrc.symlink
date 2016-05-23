@@ -71,6 +71,8 @@ Plugin 'rdolgushin/gitignore.vim'
 "Bundle 'wakatime/vim-wakatime'
 " Syntax highlighting for Dockerfiles
 Plugin 'ekalinin/dockerfile.vim'
+" Automatically use indentation schema from file (tabs or spaces)
+Plugin 'tpope/vim-sleuth'
 
 call vundle#end()
 
