@@ -1,7 +1,2 @@
-alias cdalgo='cd ~/Repositories/algorithmix_homework'
-alias cdoxygen='cd ~/Repositories/oxygen'
-alias cdcoheelflink="cd ~/Repositories/coheel-stratosphere"
-alias cdbookly="cd ~/Repositories/Bookly"
-alias cdsentence="cd ~/Repositories/sentence-boundary-detection-nn"
-alias cdtesting="cd ~/Repositories/onehundredandeighty-testing"
 alias cdonehundredandeighty="cd ~/Repositories/onehundredandeighty"
+alias cdthesis='cd ~/Repositories/master-thesis/notes/'
