@@ -5,7 +5,8 @@ export PATH="$PATH:/home/knub/.cargo/bin"
 
 ## JAVA HOME
 #export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
-export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_31
+#export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_31
+export JAVA_HOME=/etc/alternatives/java_sdk
 
 ## HADOOP_HOME
 export HADOOP_HOME="/home/knub/Programme/hadoop-2.5.1"
