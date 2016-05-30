@@ -15,7 +15,7 @@ alias k="sudo kill -9"
 alias o='gnome-open'
 alias sl="sl -e -F"
 alias lisa="ls -lisahF"
-alias gradle="./gradlew"
+#alias gradle="./gradlew"
 
 function cpv() {
 	rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --
