@@ -73,6 +73,11 @@ Plugin 'rdolgushin/gitignore.vim'
 Plugin 'ekalinin/dockerfile.vim'
 " Automatically use indentation schema from file (tabs or spaces)
 Plugin 'tpope/vim-sleuth'
+" Folding for latex files
+"Plugin 'gerw/vim-latex-suite'
+Plugin 'matze/vim-tex-fold'
+" Grammar and language checking
+Plugin 'LanguageTool'
 
 call vundle#end()
 
@@ -267,3 +272,8 @@ let g:pymode_doc = 0
 let g:pymode_run = 0
 let g:pymode_breakpoint = 0
 let g:pymode_rope_completion = 0
+" ==================================================
+" LanguageTool
+" ==================================================
+let g:languagetool_jar='/opt/LanguageTool-3.3/languagetool-commandline.jar'
+
