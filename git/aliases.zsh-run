@@ -4,7 +4,7 @@ alias ga="git add"
 alias ga.="git add ."
 alias gam='git commit --amend'
 alias gp='git push origin HEAD -q'
-alias glr='git pull --rebase'
+alias glr='git pull --rebase --quiet && git --no-pager log --decorate=short --pretty="format:HEAD %C(yellow)%H%n%CresetAuthor: %an <%ae>%nDate: %ai, %ar%n%n%s%n" -n1'
 alias grc='git rebase --continue'
 alias gd='git diff'
 alias gds='git diff --staged'
