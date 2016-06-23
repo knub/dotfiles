@@ -2,6 +2,7 @@
 export PATH="$PATH:/opt/scala-2.11.5/bin"
 export PATH="$PATH:/opt/idea-IU-143.1184.17/bin"
 export PATH="$PATH:/home/knub/.cargo/bin"
+export PATH="/opt/anaconda3/bin:$PATH"
 
 ## JAVA HOME
 #export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
@@ -15,16 +16,4 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 ## ANDROID
 export ANDROID_HOME="/opt/android-sdk"
 
-## Caffe
-export CAFFE_ROOT="/opt/caffe-tmbo"
-export PYTHONPATH="$CAFFE_ROOT/python"
-
-## Sentence boundary detection
-export PYTHONPATH="/home/knub/Repositories/sentence-boundary-detection-nn/python:$PYTHONPATH"
-
-## Yaafe
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages/yaafelib
-
-## QtCreator
-alias qtcreator="/opt/Qt5.4.1/Tools/QtCreator/bin/qtcreator.sh"
+export PYTHONPATH="/home/knub/Repositories/master-thesis/code/python:$PYTHONPATH"
