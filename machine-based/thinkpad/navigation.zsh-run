@@ -1,3 +1,4 @@
 alias cdonehundredandeighty="cd ~/Repositories/onehundredandeighty"
 alias cdthesis='cd ~/Repositories/master-thesis/'
 alias cdword2vec='cd ~/Repositories/word2vec/trunk'
+alias cdlftm='cd ~/Repositories/LFTM'
