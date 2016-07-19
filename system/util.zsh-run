@@ -40,3 +40,5 @@ function byobustart() {
 		byobu new -s $1
 	fi
 }
+
+alias sum='awk "{ sum += \$1 } END { print sum }"'
