@@ -4,9 +4,13 @@ function watchdir() {
 	watch ls -lisah $1
 }
 
-# find file
+# find file, ignore gitignored files
 function ff() {
 	ag -l --nocolor --hidden -g "$1"
+}
+# find file, do not ignore gitignored files
+function ffa() {
+	ag -a -l --nocolor --hidden -g "$1"
 }
 function vimopen() {
 	vim $(ff $1)
