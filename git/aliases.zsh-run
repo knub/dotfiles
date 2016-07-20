@@ -20,7 +20,7 @@ alias gcod='git checkout develop'
 alias gb='git branch'
 alias gs='git status -sb'
 alias gt='git stash'
-alias gtlrt='git stash && git pull --rebase && git stash pop'
+alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias vimexclude="vim + .git/info/exclude"
 function gri() {
     git rebase -i "HEAD~$1"
