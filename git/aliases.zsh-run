@@ -4,6 +4,7 @@ alias ga="git add"
 alias ga.="git add ."
 alias gam='git commit --amend'
 alias gp='git push origin HEAD -q'
+alias gpf='gp -f'
 alias gl='git --no-pager log --decorate=short --pretty="format:HEAD %C(yellow)%H%n%CresetAuthor: %an <%ae>%nDate: %ai, %ar%n%n%s%n" -n1'
 alias glr='git pull --rebase --quiet && gl'
 alias grc='git rebase --continue'
@@ -21,6 +22,7 @@ alias gb='git branch'
 alias gs='git status -sb'
 alias gt='git stash'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
+alias gcaap='git add . && git-amend && gp -f' # git commit all amend push
 alias vimexclude="vim + .git/info/exclude"
 function gri() {
     git rebase -i "HEAD~$1"
