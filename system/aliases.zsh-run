@@ -4,6 +4,7 @@ alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && su
 
 alias pdflatex='pdflatex -halt-on-error'
 alias startvpn='snx -s 141.89.226.132 -u stefan.bunk'
+alias sshisfet='startvpn && ssh isfet'
 
 # http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
 alias cls='printf "\033c"'
