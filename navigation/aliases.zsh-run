@@ -3,3 +3,18 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias cddotfiles='cd ~/dotfiles'
+
+function rl() {
+	if hash xclip 2>/dev/null; then
+		readlink -f $1 | xclip -selection c
+	else
+		readlink -f $1
+	fi
+}
+function rl.() {
+	if hash xclip 2>/dev/null; then
+		readlink -f . | xclip -selection c
+	else
+		readlink -f .
+	fi
+}
