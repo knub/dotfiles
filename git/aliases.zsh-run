@@ -23,7 +23,12 @@ alias gs='git status -sb'
 alias gt='git stash'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias gcaap='git add . && git-amend && gp -f' # git commit all amend push
-alias vimexclude="vim + .git/info/exclude"
 function gri() {
     git rebase -i "HEAD~$1"
+}
+function vimgitexclude() {
+    vim + $(git rev-parse --show-toplevel)/.git/info/exclude
+}
+function vimgitignore() {
+    vim + $(git rev-parse --show-toplevel)/.gitignore
 }
