@@ -8,13 +8,13 @@ function rl() {
 	if hash xclip 2>/dev/null; then
 		readlink -n -f $1 | xclip -selection c
 	else
-		readlink -n -f $1
+		readlink -f $1
 	fi
 }
 function rl.() {
 	if hash xclip 2>/dev/null; then
 		readlink -n -f . | xclip -selection c
 	else
-		readlink -n -f .
+		readlink -f .
 	fi
 }
