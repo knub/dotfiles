@@ -138,6 +138,8 @@ vnoremap <C-C> "+y
 
 " Use four spaces for one tab
 set tabstop=4
+" Allow Vim to open nr. of tabs on start
+set tabpagemax=100
 set shiftwidth=4
 " Maintain more context around the cursor
 set scrolloff=4
