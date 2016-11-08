@@ -23,6 +23,10 @@ for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 # Start autocompletion
 # autoload -U compinit
 # compinit
+#
+
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 source "$HOME/.qfc/bin/qfc.sh"
 qfc_quick_command 'cd' '\C-b' 'cd $0'
