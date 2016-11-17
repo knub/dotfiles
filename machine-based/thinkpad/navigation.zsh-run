@@ -1,5 +1,9 @@
 alias cdonehundredandeighty="cd ~/Repositories/onehundredandeighty"
-alias cdthesis='cd ~/Repositories/master-thesis/'
+alias cdthesis='cd ~/Repositories/master-thesis/thesis'
+alias cddata='cd ~/Repositories/master-thesis/data'
+alias cdmodels='cd ~/Repositories/master-thesis/models'
+alias cdresults='cd ~/Repositories/master-thesis/results'
+alias cdmaster='cd ~/Repositories/master-thesis'
 alias cdscala='cd ~/Repositories/master-thesis/code/scala'
 alias cdpython='cd ~/Repositories/master-thesis/code/python/knub/thesis'
 alias cdword2vec='cd ~/Repositories/word2vec/trunk'
