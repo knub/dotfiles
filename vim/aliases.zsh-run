@@ -1,1 +1,1 @@
-alias vim='vim -p'
+alias vim='gvim -p -v'
