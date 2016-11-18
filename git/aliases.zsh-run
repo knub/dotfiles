@@ -23,6 +23,7 @@ alias gs='git status -sb'
 alias gt='git stash'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias gcaap='git add . && git-amend && gp -f' # git commit all amend push
+alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
 function gri() {
     git rebase -i "HEAD~$1"
 }
