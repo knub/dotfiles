@@ -132,8 +132,8 @@ set synmaxcol=300
 set lazyredraw
 
 " Map Ctrl-C and Ctrl-V
-map <C-V> "+gP
-cmap <C-V> <C-R>+
+" map <C-V> "+gP
+" cmap <C-V> <C-R>+
 vnoremap <C-C> "+y
 
 " Use four spaces for one tab
