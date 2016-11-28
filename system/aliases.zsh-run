@@ -12,7 +12,7 @@ alias cls='printf "\033c"'
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias wcl="wc -l"
 alias e='evince'
-alias k="sudo kill -9"
+alias k="kill -9"
 alias o='gnome-open'
 alias sl="sl -e -F"
 alias lisa="ls -lisahF"
