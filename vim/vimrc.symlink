@@ -78,6 +78,8 @@ Plugin 'tpope/vim-sleuth'
 Plugin 'matze/vim-tex-fold'
 " Grammar and language checking
 Plugin 'LanguageTool'
+" Surround stuff
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 
