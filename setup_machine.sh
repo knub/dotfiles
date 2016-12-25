@@ -29,9 +29,11 @@ sudo $PACKAGE_MANAGER install \
 	gnome-tweak-tool \
 	gparted \
 	gvim \
+	iotop \
 	ImageMagick \
 	inkscape \
 	meld \
+	nethogs \
 	rubygem-rake \
 	sl \
 	the_silver_searcher \
@@ -47,12 +49,14 @@ sudo $PACKAGE_MANAGER install \
 	zsh
 
 
-if ! grep "knub:/bin/zsh" /etc/passwd ; then
+if ! grep -q "knub:/bin/zsh" /etc/passwd ; then
 	chsh -s /bin/zsh
 fi
 
-sudo dnf config-manager --add-repo http://download.opensuse.org/repositories/home:snwh:paper/Fedora_24/home:snwh:paper.repo
-sudo dnf install paper-gtk-theme paper-icon-theme
+if ! dnf repolist | grep -q "home_snwh_paper" ; then
+	sudo dnf config-manager --add-repo http://download.opensuse.org/repositories/home:snwh:paper/Fedora_24/home:snwh:paper.repo
+	sudo dnf install paper-gtk-theme paper-icon-theme
+fi
 
 if ! test -L ~/.zshrc ; then
 	rake install
