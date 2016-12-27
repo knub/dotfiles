@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if test "$#" -ne 2 ; then
+	echo "Usage: on_change [file] [command]"
+	echo "       file: file or directory to watch for changes"
+	echo "       command: command to be executed using eval. Use quotes, if necessary."
+	echo "Example: on_change file.txt \"command1 && command2\""
+	exit 1
+fi
+
+eval "$2"
+
+while inotifywait -q -e close_write "$1" ; do
+	eval "$2" ;
+done
