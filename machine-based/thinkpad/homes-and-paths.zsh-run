@@ -1,8 +1,8 @@
 ## PATH
-export PATH="$PATH:/opt/scala-2.11.5/bin"
-export PATH="$PATH:/opt/idea-IU-143.1184.17/bin"
-export PATH="$PATH:/home/knub/.cargo/bin"
-export PATH="/opt/anaconda3/bin:$PATH"
+# export PATH="$PATH:/opt/scala-2.11.5/bin"
+# export PATH="$PATH:/opt/idea-IU-143.1184.17/bin"
+# export PATH="$PATH:/home/knub/.cargo/bin"
+#export PATH="/opt/anaconda3/bin:$PATH"
 
 ## JAVA HOME
 #export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
@@ -15,5 +15,3 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 
 ## ANDROID
 export ANDROID_HOME="/opt/android-sdk"
-
-export PYTHONPATH="/home/knub/Repositories/master-thesis/code/python:$PYTHONPATH"
