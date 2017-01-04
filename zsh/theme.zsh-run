@@ -1,6 +1,7 @@
 local ret_status="%(?::%{$fg_bold[red]%}XXXXX %s)%{$reset_color%}"
+local date_string="%{$fg[white]%}%T%{$reset_color%}"
 PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[black]%}%~ %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-RPS1='${ret_status}'
+RPS1='${ret_status}${date_string}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
