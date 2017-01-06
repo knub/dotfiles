@@ -1,0 +1,27 @@
+#
+# Some GTK programs output ugly warnings on the command line.
+# Problem description and Workaround:
+# http://askubuntu.com/questions/505594/how-to-stop-gedit-and-other-programs-from-outputting-gtk-warnings-and-the-like
+#
+
+# generates a function named $1 which:
+# - executes $(which $1) [with args]
+# - suppresses output lines which match $2
+# e.g. adding: _supress echo "hello\|world"
+# will generate this function:
+# echo() { $(which echo) "$@" 2>&1 | tr -d '\r' | grep -v "hello\|world"; }
+# and from now on, using echo will work normally except that lines with
+# hello or world will not show at the output
+# to see the generated functions, replace eval with echo below
+# the 'tr' filter makes sure no spurious empty lines pass from some commands
+_suppress() {
+    program_name=$(which $1)
+    eval "$1() { $program_name \"\$@\" 2>&1 | tr -d '\r' | grep -v \"$2\" | grep -v '^$'; }"
+}
+
+_suppress evince "Theme parsing error\|gtk_widget_get_preferred_width"
+_suppress gedit   "Theme parsing error\|gtk_widget_get_preferred_width"
+_suppress nautilus   "Theme parsing error\|gtk_widget_get_preferred_width"
+_suppress meld   "Theme parsing error\|gtk_widget_get_preferred_width"
+# _supress gnome-terminal "accessibility bus\|stop working with a future version"
+# _supress firefox        "g_slice_set_config"
