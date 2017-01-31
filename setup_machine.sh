@@ -19,6 +19,7 @@ fi
 
 sudo $PACKAGE_MANAGER upgrade
 sudo $PACKAGE_MANAGER install \
+	alacarte \
 	autokey-gtk \
 	curl \
 	darktable \
@@ -43,7 +44,6 @@ sudo $PACKAGE_MANAGER install \
 	tlp \
 	tlp-rdw \
 	unison \
-	vlc \
 	vim \
 	wine \
 	zsh
