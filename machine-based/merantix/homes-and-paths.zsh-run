@@ -1,2 +1,5 @@
 export PYTHONPATH="/home/knub/Repositories/merantix:"
-export PATH="/opt/anaconda2/bin:$PATH"
+export PATH="/opt/miniconda2/bin:$PATH"
+
+source $HOME/merantix/core/developer_env/setup.sh
+unset DIR
