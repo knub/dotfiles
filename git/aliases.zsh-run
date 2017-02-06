@@ -5,6 +5,7 @@ alias ga.="git add ."
 alias gam='git commit --amend'
 alias gp='git push origin HEAD -q'
 alias gpf='gp -f'
+alias gpt='git push -u -q origin $(git rev-parse --abbrev-ref HEAD)'
 alias gl='git --no-pager log --decorate=short --pretty="format:HEAD %C(yellow)%H%n%CresetAuthor: %an <%ae>%nDate:   %ai, %ar%nCommit: %ci %cr%n%n%s%n" -n1'
 alias glr='git pull --rebase --quiet && gl'
 alias grc='git rebase --continue'
