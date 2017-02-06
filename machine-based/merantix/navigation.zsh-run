@@ -1,3 +1,4 @@
 alias cdcore="cd ~/merantix/core"
 alias cdbeamer="cd ~/merantix/core/beamer"
 alias cdoxfordflower="cd ~/merantix/core/bprojects/oxford_flower"
+alias cdedison="cd ~/merantix/core/bprojects/edison"
