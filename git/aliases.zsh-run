@@ -35,3 +35,6 @@ function vimgitexclude() {
 function vimgitignore() {
     vim + $(git rev-parse --show-toplevel)/.gitignore
 }
+function vimgitconfig() {
+    vim + $(git rev-parse --show-toplevel)/.git/config
+}

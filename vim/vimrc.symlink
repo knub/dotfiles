@@ -114,7 +114,6 @@ nmap . .`[
 " Set terminal title
 set title
 
-
 " ==================================================
 " Editing
 " ==================================================
@@ -165,6 +164,11 @@ set splitright
 set splitbelow
 " Show how many options there are when autocompleting
 set wildmenu
+
+
+autocmd BufRead,BufNewFile *.tsv set filetype=tsv
+autocmd FileType tsv setlocal tabstop=32 noexpandtab
+au FileType tsv let Comment="#" | let EndComment=""
 
 
 " ==================================================
