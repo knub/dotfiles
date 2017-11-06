@@ -23,10 +23,20 @@ alias gcod='git checkout develop'
 alias gb='git branch'
 alias gs='git status -sb'
 alias grpo='git remote prune origin'
+alias grh='git reset HEAD'
 alias gt='git stash'
+alias gbd='git branch -D'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias gcaapf='git add . && git-amend && gp -f' # git commit all amend push force
 alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
+
+function gpm() {
+    # git post merge cleanup
+    gcom
+    glr
+    gbd $1
+    grpo
+}
 function gri() {
     git rebase -i "HEAD~$1"
 }
