@@ -1,1 +1,5 @@
 alias sshtensorboard="gssh john-tensorboard"
+
+function start_tb_moscow() {
+	python /home/knub/merantix/core/developer_env/tensorboard_deploy.py --instance-name mscw-tensorboard --logdir gs://merantix-dev-moscow-hft-derived/experiments_classification/$1 --port $2
+}
