@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGE_MANAGER=dnf
+PACKAGE_MANAGER=apt
 
 set -o xtrace
 
@@ -25,20 +25,20 @@ sudo $PACKAGE_MANAGER install \
 	gitg \
 	gnome-tweak-tool \
 	gparted \
-	gvim \
+	vim-gtk3 \
 	iotop \
-	ImageMagick \
 	inkscape \
 	meld \
 	nethogs \
-	rubygem-rake \
+	rake \
 	sl \
-	the_silver_searcher \
+	silversearcher-ag \
 	tree \
-	texlive \
 	tilda \
 	tlp \
 	tlp-rdw \
+	ubuntu-restricted-extras \
+	ubuntu-restricted-addons \
 	unison \
 	vim \
 	zsh
@@ -48,10 +48,10 @@ if ! grep -q "knub:/bin/zsh" /etc/passwd ; then
 	chsh -s /bin/zsh
 fi
 
-if ! dnf repolist | grep -q "home_snwh_paper" ; then
-	sudo dnf config-manager --add-repo http://download.opensuse.org/repositories/home:snwh:paper/Fedora_25/home:snwh:paper.repo
-	sudo dnf install paper-gtk-theme paper-icon-theme
-fi
+#if ! dnf repolist | grep -q "home_snwh_paper" ; then
+#	sudo dnf config-manager --add-repo http://download.opensuse.org/repositories/home:snwh:paper/Fedora_25/home:snwh:paper.repo
+#	sudo dnf install paper-gtk-theme paper-icon-theme
+	#fi
 
 if ! test -L ~/.zshrc ; then
 	rake install
@@ -75,7 +75,5 @@ fi
 # * dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface scaling-factor 1
 
 
-
-#ubuntu-restricted-extras
-#ubuntu-restricted-addons
-#acpi-call-tools \
+sudo apt-get remove gnome-shell-extension-ubuntu-dock
+gsettings set org.gnome.shell enable-hot-corners true
