@@ -32,9 +32,10 @@ alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
 
 function gpm() {
     # git post merge cleanup
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
     gcom
     glr
-    gbd $1
+    gbd $BRANCH
     grpo
 }
 function gri() {
