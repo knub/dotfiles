@@ -31,6 +31,7 @@ sudo $PACKAGE_MANAGER install \
 	inkscape \
 	meld \
 	nethogs \
+	ncdu \
 	rubygem-rake \
 	sl \
 	the_silver_searcher \
@@ -41,6 +42,7 @@ sudo $PACKAGE_MANAGER install \
 	tlp-rdw \
 	unison \
 	vim \
+	xclip \
 	zsh
 
 

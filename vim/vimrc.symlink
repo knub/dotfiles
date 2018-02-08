@@ -64,7 +64,7 @@ let g:hugefile_trigger_size = '10000' " files over x MB are considered as large,
 " Visible git undo tree
 Plugin 'sjl/gundo.vim'
 " Python
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
 " Gitignore
 Plugin 'rdolgushin/gitignore.vim'
 " Time tracking
@@ -113,7 +113,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 nmap . .`[
 " Set terminal title
 set title
-
 
 " ==================================================
 " Editing
@@ -165,6 +164,11 @@ set splitright
 set splitbelow
 " Show how many options there are when autocompleting
 set wildmenu
+
+
+autocmd BufRead,BufNewFile *.tsv set filetype=tsv
+autocmd FileType tsv setlocal tabstop=32 noexpandtab
+au FileType tsv let Comment="#" | let EndComment=""
 
 
 " ==================================================

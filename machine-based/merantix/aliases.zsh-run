@@ -1,0 +1,14 @@
+function start_tb_moscow() {
+	python /home/knub/merantix/core/developer_env/tensorboard_deploy.py --instance-name mscw-tensorboard --logdir gs://merantix-dev-moscow-hft-derived/experiments_classification_$1/$2 --port $3
+}
+
+function tbs() {
+	gcloud compute ssh $1 --command="grep 1 /tmp/tensorboards/*"
+}
+
+alias cil="gcloud compute instances list"
+# alias cid="gcloud compute instances delete"
+
+function cid() {
+	gcloud compute instances list | grep $1 | awk '{print $1}' | xargs -I {} -P 100  gcloud compute instances delete {} --quiet
+}

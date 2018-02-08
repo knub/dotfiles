@@ -3,8 +3,10 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias ga="git add"
 alias ga.="git add ."
 alias gam='git commit --amend'
-alias gp='git push origin HEAD -q'
+alias gp='git push -u origin HEAD -q'
 alias gpf='gp -f'
+alias gpt='git push -u -q origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpd='git push origin --delete'
 alias gl='git --no-pager log --decorate=short --pretty="format:HEAD %C(yellow)%H%n%CresetAuthor: %an <%ae>%nDate:   %ai, %ar%nCommit: %ci %cr%n%n%s%n" -n1'
 alias glr='git pull --rebase --quiet && gl'
 alias grc='git rebase --continue'
@@ -20,10 +22,22 @@ alias gcom='git checkout master'
 alias gcod='git checkout develop'
 alias gb='git branch'
 alias gs='git status -sb'
+alias grpo='git remote prune origin'
+alias grh='git reset HEAD'
 alias gt='git stash'
+alias gbd='git branch -D'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
-alias gcaap='git add . && git-amend && gp -f' # git commit all amend push
+alias gcaapf='git add . && git-amend && gp -f' # git commit all amend push force
 alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
+
+function gpm() {
+    # git post merge cleanup
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    gcom
+    glr
+    gbd $BRANCH
+    grpo
+}
 function gri() {
     git rebase -i "HEAD~$1"
 }
@@ -32,4 +46,7 @@ function vimgitexclude() {
 }
 function vimgitignore() {
     vim + $(git rev-parse --show-toplevel)/.gitignore
+}
+function vimgitconfig() {
+    vim + $(git rev-parse --show-toplevel)/.git/config
 }
