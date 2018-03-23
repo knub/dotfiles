@@ -38,6 +38,12 @@ function gpm() {
     gbd $BRANCH
     grpo
 }
+function gbackup() {
+    # creates backup branch
+    BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    git checkout -b $BRANCH-backup
+    git checkout $BRANCH
+}
 function gri() {
     git rebase -i "HEAD~$1"
 }

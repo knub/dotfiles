@@ -16,3 +16,7 @@ function cid() {
 }
 
 alias dipython="drun ipython -i /merantix_core/developer_env/ipython_setup.py"
+
+function vimgithook() {
+    vim + $(git rev-parse --show-toplevel)/.git/hooks/pre-commit
+}
