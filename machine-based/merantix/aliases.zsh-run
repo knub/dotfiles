@@ -7,8 +7,12 @@ function tbs() {
 }
 
 alias cil="gcloud compute instances list"
-# alias cid="gcloud compute instances delete"
+alias cid="gcloud compute instances delete"
+alias cista="gcloud compute instances start"
+alias cisto="gcloud compute instances stop"
 
 function cid() {
 	gcloud compute instances list | grep $1 | awk '{print $1}' | xargs -I {} -P 100  gcloud compute instances delete {} --quiet
 }
+
+alias dipython="drun ipython -i /merantix_core/developer_env/ipython_setup.py"
