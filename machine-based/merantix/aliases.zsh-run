@@ -3,7 +3,7 @@ function start_tb_moscow() {
 }
 
 function tbs() {
-	gcloud compute ssh $1 --command="grep 1 /tmp/tensorboards/*"
+	gcloud compute ssh $1 --command='sudo docker ps --format "{{.Names}}" | xargs -I "{}" grep -H merantix /tmp/tensorboards/{} | sort'
 }
 
 alias cil="gcloud compute instances list"
