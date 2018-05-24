@@ -46,3 +46,10 @@ function byobustart() {
 }
 
 alias sum='awk "{ sum += \$1 } END { print sum }"'
+
+function lsdownloads() {
+	ls ~/Downloads
+}
+function rmdownloads() {
+	rm ~/Downloads/*
+}
