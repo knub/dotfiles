@@ -29,6 +29,7 @@ sudo $PACKAGE_MANAGER install \
 	iotop \
 	inkscape \
 	meld \
+	ncdu \
 	nethogs \
 	rake \
 	sl \
@@ -39,7 +40,7 @@ sudo $PACKAGE_MANAGER install \
 	tlp-rdw \
 	ubuntu-restricted-extras \
 	ubuntu-restricted-addons \
-	unison \
+	unison-gtk \
 	vim \
 	zsh
 
