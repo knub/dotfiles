@@ -42,7 +42,6 @@ if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
   source '/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
-
 export ADDITIONAL_DRUN_PARAMS='-v "/media/knub/Media/data:/merantix_core/data"'
 source $HOME/merantix/core/developer_env/setup.sh
 unset DIR
