@@ -1,10 +1,6 @@
 alias cdcore="cd ~/merantix/core"
-alias cdbeamer="cd ~/merantix/core/beamer"
-alias cdoxfordflower="cd ~/merantix/core/projects/oxford_flower"
-alias cdedison="cd ~/merantix/core/projects/edison"
-alias cdreports="cd ~/merantix/core/projects/edison/reports"
-alias cdmoscow="cd ~/merantix/core/projects/moscow_hft"
-alias cdmoscowtest="cd ~/merantix/core/data/moscow_test"
+alias cdpp="cd /merantix_core/data/mx-healthcare-derived/preprocessed"
+alias cdexperiments="cd /merantix_core/data/mx-healthcare-derived/experiments"
 
 function cddata() {
 	if [ "$#" -eq 0 ]
@@ -14,5 +10,3 @@ function cddata() {
 		cd ~/merantix/core/data/$1
 	fi
 }
-alias cdmoscowpreprocessing="cd ~/merantix/core/projects/moscow_hft/preprocessing"
-alias cdexperimental="cd ~/merantix/core/experimental/knub"
