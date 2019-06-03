@@ -35,7 +35,13 @@ alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
 function gpm() {
     # git post merge cleanup
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    gcom
+
+    if [[ $# -ne 0 ]]
+    then
+        gco $1
+    else
+        gcom
+    fi
     glr
     gbd $BRANCH
     grpo
