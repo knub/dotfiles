@@ -1,0 +1,21 @@
+function guasetup {
+	cd /media/knub/Media/data/mx-healthcare-derived/preprocessed
+	guake --rename-current-tab "pp" --execute-command="cls"
+	sleep 0.3
+	guake --new-tab=2 --execute-command="cd /media/knub/Media/data/mx-healthcare-derived/experiments && cls" &
+	sleep 0.3
+	guake --new-tab=3 --execute-command="cd /home/knub/merantix/core && cls && djupyter" &
+	sleep 0.3
+	guake --new-tab=4 --execute-command="cd /home/knub/merantix/edison-product && cls" &
+	sleep 0.3
+	guake --new-tab=5 --execute-command="cd /home/knub/merantix/core && cls" &
+	sleep 0.3
+	guake --select-tab=1
+	guake --rename-current-tab="train"
+	guake --select-tab=2
+	guake --rename-current-tab="jupyter"
+	guake --select-tab=3
+	guake --rename-current-tab="ml-product"
+	guake --select-tab=4
+	guake --rename-current-tab="core"
+}
