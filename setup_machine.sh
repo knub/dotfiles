@@ -12,13 +12,10 @@ fi
 sudo $PACKAGE_MANAGER upgrade
 sudo $PACKAGE_MANAGER install \
 	acpi-call-dkms \
-	alacarte \
 	autokey-gtk \
 	curl \
-	dconf-editor \
 	htop \
 	powertop \
-	gimp \
 	gitg \
 	gnome-tweak-tool \
 	gparted \
@@ -27,11 +24,9 @@ sudo $PACKAGE_MANAGER install \
 	imagemagick \
 	inkscape \
 	meld \
-	nethogs \
 	ncdu \
 	rake \
 	smartmontools \
-	sl \
 	silversearcher-ag \
 	tree \
 	tilda \
