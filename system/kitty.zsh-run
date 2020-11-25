@@ -1,0 +1,14 @@
+alias icat="kitty +kitten icat --align left"
+
+function show_rocs() {
+	for d in $(gsutil ls "gs://mx-healthcare-derived/experiments/smart_elimination/image/$1/**/roc_curve_screen_detected_cancers.png"); do
+		dataset=${d/*$1\//};
+		dataset=${dataset/\/cancer_detection_task*/};
+		dataset=${dataset:19}
+		echo $dataset | tr a-z A-Z;
+		gsutil cp $d . 2> /dev/null
+		icat roc_curve_screen_detected_cancers.png
+		rm roc_curve_screen_detected_cancers.png
+	done;
+}
+
