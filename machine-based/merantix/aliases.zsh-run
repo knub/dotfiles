@@ -22,14 +22,16 @@ function vimgithook() {
 }
 
 function delete_branches() {
-    git branch --list 'markus-*' | xargs -r git branch -D
-    git branch --list 'thijs-*' | xargs -r git branch -D
     git branch --list 'benjamin-*' | xargs -r git branch -D
     git branch --list 'christian-*' | xargs -r git branch -D
+    git branch --list 'dominik_*' | xargs -r git branch -D
     git branch --list 'filippo-*' | xargs -r git branch -D
+    git branch --list 'gunnar-*' | xargs -r git branch -D
     git branch --list 'john-*' | xargs -r git branch -D
     git branch --list 'john_*' | xargs -r git branch -D
     git branch --list 'jack-*' | xargs -r git branch -D
     git branch --list 'jacek-*' | xargs -r git branch -D
+    git branch --list 'markus-*' | xargs -r git branch -D
     git branch --list 'robert-*' | xargs -r git branch -D
+    git branch --list 'thijs-*' | xargs -r git branch -D
 }
