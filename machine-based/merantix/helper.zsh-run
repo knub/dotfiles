@@ -1,0 +1,4 @@
+function merantix_data_sync_with_nautilus() {
+	merantix_data_sync $1
+	nautilus ~/merantix/core/data/$1
+}
