@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/dotfiles
 ### Antigen
+setopt INTERACTIVE_COMMENTS
 source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle arzzen/calc.plugin.zsh
@@ -27,8 +28,6 @@ for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 
 export HISTSIZE=100000
 export SAVEHIST=100000
-
-source /home/knub/Repositories/core/developer_env/setup.sh
 
 # source "$HOME/.qfc/bin/qfc.sh"
 # qfc_quick_command 'cd' '\C-b' 'cd $0'

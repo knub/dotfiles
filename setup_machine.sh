@@ -9,25 +9,14 @@ if ! test -f zsh/antigen/Makefile ; then
 	git submodule update
 fi
 
-if ! grep -q "defaultyes" /etc/dnf/dnf.conf ; then
-	echo "defaultyes=True" | sudo tee -a /etc/dnf/dnf.conf
-fi
-
 sudo $PACKAGE_MANAGER upgrade
 sudo $PACKAGE_MANAGER install \
-	alacarte \
-	autokey-gtk \
 	curl \
 	dconf-editor \
 	htop \
 	powertop \
-	gimp \
 	gitg \
-	gnome-tweak-tool \
-	gparted \
-	vim-gtk3 \
-	iotop \
-	inkscape \
+	gnome-tweaks \
 	meld \
 	ncdu \
 	nethogs \
@@ -42,6 +31,7 @@ sudo $PACKAGE_MANAGER install \
 	ubuntu-restricted-addons \
 	unison-gtk \
 	vim \
+	vim-gtk3 \
 	zsh
 
 
@@ -76,5 +66,4 @@ fi
 # * dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface scaling-factor 1
 
 
-sudo apt-get remove gnome-shell-extension-ubuntu-dock
-gsettings set org.gnome.shell enable-hot-corners true
+# sudo apt-get remove gnome-shell-extension-ubuntu-dock
