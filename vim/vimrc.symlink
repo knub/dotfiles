@@ -114,6 +114,12 @@ nmap . .`[
 " Set terminal title
 set title
 
+" ==================================================
+" Git
+" ==================================================
+" Always start on first line of git commit message, from http://vim.wikia.com/wiki/Always_start_on_first_line_of_git_commit_message
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
 
 " ==================================================
 " Editing
@@ -165,6 +171,11 @@ set splitright
 set splitbelow
 " Show how many options there are when autocompleting
 set wildmenu
+
+
+autocmd BufRead,BufNewFile *.tsv set filetype=tsv
+autocmd FileType tsv setlocal tabstop=32 noexpandtab
+au FileType tsv let Comment="#" | let EndComment=""
 
 
 " ==================================================

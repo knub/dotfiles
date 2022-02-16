@@ -5,14 +5,10 @@ source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle arzzen/calc.plugin.zsh
 antigen bundle dirhistory
-#antigen bundle djui/alias-tips
 antigen bundle extract
 antigen bundle mvn
 antigen bundle vagrant
 antigen bundle web-search
-#antigen theme kafeitu
-#antigen-bundle arialdomartini/oh-my-git
-#antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 antigen apply
 
 # Replace known paths with their variable short form
@@ -29,12 +25,3 @@ for config_file ($DOTFILES/**/*.zsh-run) source $config_file
 export HISTSIZE=100000
 export SAVEHIST=100000
 
-# source "$HOME/.qfc/bin/qfc.sh"
-# qfc_quick_command 'cd' '\C-b' 'cd $0'
-# qfc_quick_command 'vim' '\C-p' 'vim $0'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/knub/google-cloud-sdk/path.zsh.inc' ]; then source '/home/knub/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/knub/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/knub/google-cloud-sdk/completion.zsh.inc'; fi

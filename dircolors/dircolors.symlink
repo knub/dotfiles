@@ -138,6 +138,7 @@ EIGHTBIT 1
 
 ### By file type
 
+OTHER_WRITABLE 00
 # global default
 NORMAL 00
 # normal file

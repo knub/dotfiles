@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+exiftool \
+    -P \
+    -d '%Y-%m-%d-%H-%M' \
+    '-filename<$DateTimeOriginal%-03c.%e' \
+    '-filename<$DateTimeOriginal $Title%-03c.%e' \
+    "$@"

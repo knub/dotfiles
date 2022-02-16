@@ -17,11 +17,15 @@ sudo $PACKAGE_MANAGER install \
 	powertop \
 	gitg \
 	gnome-tweaks \
+	gparted \
+	vim-gtk3 \
+	iotop \
+	imagemagick \
+	inkscape \
 	meld \
 	ncdu \
 	nethogs \
 	rake \
-	sl \
 	silversearcher-ag \
 	tree \
 	tilda \
@@ -31,7 +35,7 @@ sudo $PACKAGE_MANAGER install \
 	ubuntu-restricted-addons \
 	unison-gtk \
 	vim \
-	vim-gtk3 \
+	xclip \
 	zsh
 
 
@@ -39,10 +43,6 @@ if ! grep -q "knub:/bin/zsh" /etc/passwd ; then
 	chsh -s /bin/zsh
 fi
 
-#if ! dnf repolist | grep -q "home_snwh_paper" ; then
-#	sudo dnf config-manager --add-repo http://download.opensuse.org/repositories/home:snwh:paper/Fedora_25/home:snwh:paper.repo
-#	sudo dnf install paper-gtk-theme paper-icon-theme
-	#fi
 
 if ! test -L ~/.zshrc ; then
 	rake install
@@ -66,4 +66,7 @@ fi
 # * dbus-launch --exit-with-session gsettings set org.gnome.desktop.interface scaling-factor 1
 
 
-# sudo apt-get remove gnome-shell-extension-ubuntu-dock
+
+#ubuntu-restricted-extras
+#ubuntu-restricted-addons
+#acpi-call-tools \

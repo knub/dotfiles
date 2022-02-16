@@ -6,7 +6,7 @@ function watchdir() {
 
 # find file, ignore gitignored files
 function ff() {
-	ag -l --nocolor --hidden -g "$1"
+	ag --skip-vcs-ignores -l --nocolor --hidden -g "$1"
 }
 # find file, do not ignore gitignored files
 function ffa() {

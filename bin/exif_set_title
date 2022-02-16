@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+for VIDEO_FNAME in "$@"
+do
+	TITLE=$(exiftool -s -s -s -XMP:Title "$VIDEO_FNAME")
+
+	echo "$VIDEO_FNAME"
+
+	# Play video
+	totem "$VIDEO_FNAME" 2> /dev/null
+
+	# Ask user for new values
+	read -e -p "Title [$TITLE]: " TITLE
+
+	# Update EXIF if result wasn't blank
+	if [ -n "${TITLE}" ]; then
+		exiftool -overwrite_original \
+			-XMP:Title="$TITLE" \
+			"$VIDEO_FNAME"
+	fi
+done
