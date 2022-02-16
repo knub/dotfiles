@@ -1,1 +1,2 @@
 export PATH="$PATH:$DOTFILES/bin"
+export PATH="$PATH:/home/knub/.local/bin"

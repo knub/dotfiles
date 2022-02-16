@@ -1,5 +1,6 @@
 export DOTFILES=$HOME/dotfiles
 ### Antigen
+setopt INTERACTIVE_COMMENTS
 source $DOTFILES/zsh/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle arzzen/calc.plugin.zsh

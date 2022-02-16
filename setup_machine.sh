@@ -11,13 +11,12 @@ fi
 
 sudo $PACKAGE_MANAGER upgrade
 sudo $PACKAGE_MANAGER install \
-	acpi-call-dkms \
-	autokey-gtk \
 	curl \
+	dconf-editor \
 	htop \
 	powertop \
 	gitg \
-	gnome-tweak-tool \
+	gnome-tweaks \
 	gparted \
 	vim-gtk3 \
 	iotop \
@@ -25,14 +24,16 @@ sudo $PACKAGE_MANAGER install \
 	inkscape \
 	meld \
 	ncdu \
+	nethogs \
 	rake \
-	smartmontools \
 	silversearcher-ag \
 	tree \
 	tilda \
 	tlp \
 	tlp-rdw \
-	unison \
+	ubuntu-restricted-extras \
+	ubuntu-restricted-addons \
+	unison-gtk \
 	vim \
 	xclip \
 	zsh
@@ -47,10 +48,10 @@ if ! test -L ~/.zshrc ; then
 	rake install
 fi
 
-
-# Vim: run `:BundleInstall`
-# open `powertop`
-
+###
+### Post installation steps
+###
+# * Install Hack font: http://sourcefoundry.org/hack/
 
 ###
 ### Gnome Shell Extensions
