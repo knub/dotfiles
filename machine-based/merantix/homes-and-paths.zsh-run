@@ -1,4 +1,8 @@
 export CLOUDSDK_PYTHON=python3
 
-LYNX_DB_URL=postgresql://read_only:UO%EH^P%t4nkRd%W@localhost:5433/lynx
+LYNX_DB_URL=postgresql://read_only:UO%EH^P%t4nkRd%W@cloudproxy:5433/lynx
 LYNX_DB_ENV="local"
+
+LYNX_DB_HOST="10.0.0.251"
+LYNX_DB_PROXY_USER="ml_access"
+LYNX_DB_PROXY_HOST="80.158.88.8"
