@@ -1,2 +1,0 @@
-# This holds only for bash, not for zsh.
-PS1='\[\e[4;30m\]\u\[\e[m\] \[\e[4;30m\]\w\[\e[m\] \[\e[0;31m\]\$ \[\e[m\]\[\e[0;30m\]'

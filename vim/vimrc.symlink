@@ -287,8 +287,4 @@ let g:pymode_doc = 0
 let g:pymode_run = 0
 let g:pymode_breakpoint = 0
 let g:pymode_rope_completion = 0
-" ==================================================
-" LanguageTool
-" ==================================================
-let g:languagetool_jar='/opt/LanguageTool-3.3/languagetool-commandline.jar'
 

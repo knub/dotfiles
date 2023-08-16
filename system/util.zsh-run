@@ -1,9 +1,5 @@
 function swap() { mv $1 $1._tmp; mv $2 $1; mv $1._tmp $2; }
 
-function watchdir() {
-	watch ls -lisah $1
-}
-
 # find file, ignore gitignored files
 function ff() {
 	ag --skip-vcs-ignores -l --nocolor --hidden -g "$1"
@@ -11,9 +7,6 @@ function ff() {
 # find file, do not ignore gitignored files
 function ffa() {
 	ag -a -l --nocolor --hidden -g "$1"
-}
-function vimopen() {
-	vim -p $(ff $1)
 }
 
 function filesort() {
@@ -27,22 +20,3 @@ function take() {
   mkdir -p $1
   cd $1
 }
-
-# Copies the pathname of the current directory to the system clipboard
-function clipdir {
-	emulate -L zsh
-	pwd | xclip -selection clip
-}
-
-setopt interactivecomments
-
-function byobustart() {
-	byobu has-session -t $1 2> /dev/null
-	if [ $? -eq 0 ]; then
-		byobu attach -t $1
-	else
-		byobu new -s $1
-	fi
-}
-
-alias sum='awk "{ sum += \$1 } END { print sum }"'

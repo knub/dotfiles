@@ -1,5 +1,0 @@
-alias vim='gvim -p -v'
-
-function vimpy() {
-	gvim -p -v "$1" && python "$1"
-}

@@ -1,31 +1,12 @@
-alias re-source="source ~/.zshrc"
-
-alias bring-system-up-to-date='sudo apt-get update && sudo apt-get upgrade && sudo apt-get autoremove'
-
-alias pdflatex='pdflatex -halt-on-error'
-alias startvpn='snx -s 141.89.226.132 -u stefan.bunk'
-alias sshisfet='startvpn && ssh isfet'
-
 # http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
 alias cls='printf "\033c"'
 
 alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias wcl="wc -l"
-alias e='evince'
 alias k="kill -9"
-alias o='gnome-open'
-alias sl="sl -e -F"
-alias ls="ls --color=tty -N"
-alias lisa="ls -lisahFN"
-#alias gradle="./gradlew"
-
-function cpv() {
-	rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --
-}
+alias lisa="ls -lisahF"
 
 export EDITOR=vim
-export PAGER=less
-export BROWSER=google-chrome
 
 # Automatically open files with correct application
 alias -s html=$BROWSER
