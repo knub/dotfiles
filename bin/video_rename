@@ -3,6 +3,8 @@
 exiftool \
     -P \
     -d '%y%m%d-%H%M' \
+    '-filename<$CreateDate%-03c.%e' \
+    '-filename<$CreateDate $Title%-03c.%e' \
     '-filename<$DateTimeOriginal%-03c.%e' \
     '-filename<$DateTimeOriginal $Title%-03c.%e' \
     "$@"
