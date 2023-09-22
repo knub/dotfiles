@@ -2,7 +2,7 @@
 
 exiftool \
     -P \
-    -d '%Y-%m-%d-%H-%M' \
+    -d '%y%m%d-%H%M' \
     '-filename<$DateTimeOriginal%-03c.%e' \
     '-filename<$DateTimeOriginal $Title%-03c.%e' \
     "$@"

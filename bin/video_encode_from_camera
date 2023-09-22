@@ -2,6 +2,6 @@
 
 for VIDEO_FNAME in "$@"
 do
-	ffmpeg -i "$VIDEO_FNAME" -movflags use_metadata_tags -c:v libx264 -preset slow -crf 24 -c:a copy "new_$VIDEO_FNAME"
+	ffmpeg -i "$VIDEO_FNAME" -movflags use_metadata_tags -c:v libx264 -preset slowest -crf 24 -c:a copy "new_$VIDEO_FNAME"
 	exiftool "-DateTimeOriginal=$(exiftool -DateTimeOriginal -s -s -s "$VIDEO_FNAME")" -overwrite_original "new_$VIDEO_FNAME"
 done

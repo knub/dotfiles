@@ -7,7 +7,7 @@ do
 	echo "$VIDEO_FNAME"
 
 	# Play video
-	totem "$VIDEO_FNAME" 2> /dev/null
+	open "$VIDEO_FNAME"
 
 	# Ask user for new values
 	read -e -p "Title [$TITLE]: " TITLE
