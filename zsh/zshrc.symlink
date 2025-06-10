@@ -37,3 +37,4 @@ fi
 
 source $HOME/merantix/core/developer_env/setup.sh EDISON
 unset DIR
+
