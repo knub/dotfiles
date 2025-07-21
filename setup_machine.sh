@@ -16,12 +16,16 @@ sudo $PACKAGE_MANAGER install \
 	git \
 	gitg \
 	gnome-tweaks \
+	gnome-shell-extension-prefs \
 	gparted \
 	guake \
 	imagemagick \
 	inkscape \
 	meld \
 	ncdu \
+	python3-full \
+	python3-gpg \
+	python3-pip \
 	rake \
 	silversearcher-ag \
 	tree \
@@ -37,8 +41,14 @@ sudo $PACKAGE_MANAGER install \
 # tlp
 # tlp-rdw
 
-sudo snap install slack
+sudo snap install zoom-client
 sudo snap install spotify
+sudo snap install joplin
+sudo snap install joplin-desktop
+sudo snap install signal-desktop
+sudo snap install zotero-snap
+sudo snap install pycharm-professional --classic
+
 
 if ! grep -q "knub:/bin/zsh" /etc/passwd ; then
 	chsh -s /bin/zsh
