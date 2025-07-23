@@ -48,6 +48,7 @@ sudo snap install joplin-desktop
 sudo snap install signal-desktop
 sudo snap install zotero-snap
 sudo snap install pycharm-professional --classic
+sudo snap install google-cloud-cli --classic
 
 
 if ! grep -q "knub:/bin/zsh" /etc/passwd ; then

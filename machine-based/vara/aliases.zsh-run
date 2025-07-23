@@ -1,3 +1,8 @@
+alias python="~/venv/system/bin/python"
+alias black="~/venv/system/bin/black"
+alias isort="~/venv/system/bin/isort"
+
+
 
 alias cil="gcloud compute instances list"
 alias cid="gcloud compute instances delete"
