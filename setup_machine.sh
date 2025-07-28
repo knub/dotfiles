@@ -12,6 +12,7 @@ fi
 sudo $PACKAGE_MANAGER upgrade
 sudo $PACKAGE_MANAGER install \
 	curl \
+	dos2unix \
 	htop \
 	git \
 	gitg \
@@ -22,6 +23,7 @@ sudo $PACKAGE_MANAGER install \
 	imagemagick \
 	inkscape \
 	meld \
+	moreutils \
 	ncdu \
 	python3-full \
 	python3-gpg \
