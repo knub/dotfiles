@@ -4,8 +4,8 @@ alias re-source="source ~/.zshrc"
 alias cls='printf "\033c"'
 
 alias wcl="wc -l"
-alias ls="ls --color=tty -N"
-alias lisa="ls -lisahFN"
+alias ls="ls --color=tty -G"
+alias lisa="ls -lisahFG"
 
 function cpv() {
 	rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --
