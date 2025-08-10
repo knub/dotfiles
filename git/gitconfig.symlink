@@ -1,6 +1,6 @@
 [user]
 	name = Stefan Bunk
-	email = stefan@merantix.com
+	email = stefan.bunk@vara.ai
 [alias]
 	count   = !git shortlog -sn
 [color]

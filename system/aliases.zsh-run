@@ -1,16 +1,9 @@
 alias re-source="source ~/.zshrc"
 
-alias pdflatex='pdflatex -halt-on-error'
-
 # http://stackoverflow.com/questions/5367068/clear-the-ubuntu-bash-screen-for-real
 alias cls='printf "\033c"'
 
-alias ack="ack-grep --ignore-dir=build --ignore-dir=antbuild"
 alias wcl="wc -l"
-alias e='evince'
-alias k="kill -9"
-alias o='gnome-open'
-alias sl="sl -e -F"
 alias ls="ls --color=tty -N"
 alias lisa="ls -lisahFN"
 
@@ -20,7 +13,6 @@ function cpv() {
 
 export EDITOR=vim
 export PAGER=less
-export BROWSER=google-chrome
 
 # Automatically open files with correct application
 alias -s html=$BROWSER

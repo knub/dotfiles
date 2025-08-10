@@ -5,14 +5,11 @@ alias ga.="git add ."
 alias gam='git commit --amend'
 alias gp='git push -u origin HEAD -q'
 alias gpf='gp -f'
-alias gpt='git push -u -q origin $(git rev-parse --abbrev-ref HEAD)'
-alias gpd='git push origin --delete'
 alias gl='git --no-pager log --decorate=short --pretty="format:HEAD %C(yellow)%H%n%CresetAuthor: %an <%ae>%nDate:   %ai, %ar%nCommit: %ci %cr%n%n%s%n" -n1'
 alias glr='git pull --rebase --quiet && gl'
 alias grc='git rebase --continue'
 alias gfro='git fetch -q && git reset --hard origin/$(git branch --show-current) && gl'
 alias gd='git diff'
-alias gds='git diff --staged'
 alias gc='git commit'
 alias gcempty='git commit -m "" --allow-empty-message'
 alias gca='git commit -a'
@@ -27,18 +24,12 @@ git_checkout_main_or_master() {
     fi
 }
 alias gcom='git_checkout_main_or_master'
-alias gcod='git checkout develop'
-alias gb='git branch'
 alias gs='git status -sb'
-alias grpo='git remote prune origin'
 alias grh='git reset HEAD'
 alias gt='git stash'
 alias gtl='git stash list'
-alias gtd='git stash drop'
-alias gbd='git branch -D'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias gcaapf='git add . && git-amend && gp -f' # git commit all amend push force
-alias gassumeunchanged='git ls-files -v | grep "^[[:lower:]]"'
 
 function gpm() {
     # git post merge cleanup
@@ -59,9 +50,6 @@ function gbackup() {
     BRANCH=$(git rev-parse --abbrev-ref HEAD)
     git checkout -b $BRANCH-backup
     git checkout $BRANCH
-}
-function gri() {
-    git rebase -i "HEAD~$1"
 }
 function vimgitexclude() {
     vim + $(git rev-parse --show-toplevel)/.git/info/exclude
