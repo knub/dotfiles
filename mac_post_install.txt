@@ -1,0 +1,16 @@
+* Settings:
+	* Network: Firewall on
+	* Energy: Start up automatically after a power failure
+* Mac App Store:
+	* Bitwarden
+	* Whatsapp
+	* CotEditor
+	* Canva
+* Download from web:
+	* Spotify
+	* homebrew
+	* Darktable
+* Darktable:
+	* Activate `change_group_leader` and `select_group_followers` scripts
+	* Activate OpenCL
+	* Look for updated XMP files on startup
