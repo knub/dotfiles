@@ -11,6 +11,7 @@ sudo brew install \
 	coreutils \
 	htop \
 	imagemagick \
+	meld \
 	moreutils \
 	ncdu \
 	the_silver_searcher
