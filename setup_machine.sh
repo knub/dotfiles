@@ -21,10 +21,12 @@ sudo $PACKAGE_MANAGER install \
 	gparted \
 	guake \
 	imagemagick \
+	isc-dhcp-client
 	inkscape \
 	meld \
 	moreutils \
 	ncdu \
+	postgresql-client \
 	python3-full \
 	python3-gpg \
 	python3-pip \

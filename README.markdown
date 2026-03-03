@@ -27,3 +27,16 @@
 * Install Dropbox manually from website
 * Install Docker manually from website
 * Install Slack manually from website (Snap app exists, but logs out repeatedly because of sandboxing).
+* Consider Grub settings for memory freezes:
+```
+# https://chatgpt.com/c/68878086-f218-832f-b18f-ed5dd1a83bea
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet splash processor.max_cstate=1 idle=nomwait"
+```
+
+
+* For using the builtin microphone properly, force Legacy HDA Driver (Recommended by Ubuntu Bug Reports):
+Open a terminal and run:
+echo "options snd-intel-dspcfg dsp_driver=1" | sudo tee /etc/modprobe.d/dsp_fix.conf
+sudo update-initramfs -u
+sudo reboot
+This disables SOF and switches to the older snd-hda-intel driver, which restores microphone and speaker functionality on most ThinkPad T14 models.

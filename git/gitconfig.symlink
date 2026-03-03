@@ -15,3 +15,5 @@
 	tool = meld
 [push]
 	default = simple
+[init]
+	defaultBranch = main
