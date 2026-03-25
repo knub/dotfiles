@@ -63,3 +63,22 @@ fi
 if ! test -L ~/.zshrc ; then
 	rake install
 fi
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+
+# To undo:
+# gsettings reset org.gnome.desktop.wm.keybindings move-to-workspace-up
+# gsettings reset org.gnome.desktop.wm.keybindings move-to-workspace-down
+# gsettings reset org.gnome.desktop.wm.keybindings move-to-workspace-left
+# gsettings reset org.gnome.desktop.wm.keybindings move-to-workspace-right
+# gsettings reset org.gnome.desktop.wm.keybindings switch-to-workspace-up
+# gsettings reset org.gnome.desktop.wm.keybindings switch-to-workspace-down
+# gsettings reset org.gnome.desktop.wm.keybindings switch-to-workspace-left
+# gsettings reset org.gnome.desktop.wm.keybindings switch-to-workspace-right

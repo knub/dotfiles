@@ -2,3 +2,6 @@ function merantix_data_sync_with_nautilus() {
 	merantix_data_sync $1
 	nautilus ~/merantix/core/data/$1
 }
+
+# For booking rooms.
+export OFFICERND_BEARER='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YzU1NzFhNWIxZDVmMjhlZmUyYzBkMCIsImlhdCI6MTc3NDI4ODUyNSwiZXhwIjoxODA1ODI0NTI1fQ.0wyHlPYifPy3h2qr3iMrtsT8RinRAgNusyWNskHoEpg'
