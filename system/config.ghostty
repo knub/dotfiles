@@ -1,0 +1,28 @@
+# Theme
+theme = Builtin Tango Light
+
+# Font
+font-size = 16
+
+# Shell
+shell-integration = zsh
+shell-integration-features = cursor,sudo,title,path
+
+# Scrollback, ~1 GB
+scrollback-limit = 1000000000
+
+
+# Window
+window-padding-x = 8
+window-padding-y = 8
+window-save-state = always
+
+# Clipboard
+clipboard-trim-trailing-spaces = true
+
+# Scrolling — tame touchpad (precision) separately from mouse wheel (discrete)
+mouse-scroll-multiplier = precision:0.5,discrete:3
+
+# Notifications
+desktop-notifications = false
+
