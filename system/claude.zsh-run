@@ -1,1 +1,4 @@
 export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
+
+# Reset kitty keyboard protocol after Claude exits, to prevent stuck terminal state
+alias claude='claude; printf "\e[>0u"'
