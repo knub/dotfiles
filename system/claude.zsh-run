@@ -1,4 +1,8 @@
-export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
+# export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
 
 # Reset kitty keyboard protocol after Claude exits, to prevent stuck terminal state
-alias claude='claude; printf "\e[>0u"'
+#alias claude='claude; printf "\e[>0u"'
+
+# Completely disable the '=' alias:
+# Prevents an error with Claude Code: https://www.perplexity.ai/search/in-claude-code-i-m-often-getti-6jW4Mx4gTOG3T6bttcCfCw
+unalias '=' 2>/dev/null

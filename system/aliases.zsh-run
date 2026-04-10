@@ -14,6 +14,8 @@ function cpv() {
 export EDITOR=vim
 export PAGER=less
 
+alias markdown_to_format="wl-paste | pandoc -f markdown -t html | wl-copy --type text/html"
+
 # Automatically open files with correct application
 alias -s html=$BROWSER
 alias -s org=$BROWSER
