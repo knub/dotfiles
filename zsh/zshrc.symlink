@@ -41,6 +41,9 @@ unalias '=' 2>/dev/null
 
 unset DIR
 
+# No terminal beep on unsuccessful autocomplete.
+setopt NO_BEEP
+
 # Created by `pipx` on 2025-09-21 13:17:33
 export PATH="$PATH:/Users/knub/.local/bin"
 
