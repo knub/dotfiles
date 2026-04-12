@@ -35,6 +35,10 @@ if [ -f /opt/google-cloud-sdk/completion.zsh.inc ]; then
   source '/opt/google-cloud-sdk/completion.zsh.inc'
 fi
 
+# Completely disable the '=' alias:
+# Prevents an error with Claude Code: https://www.perplexity.ai/search/in-claude-code-i-m-often-getti-6jW4Mx4gTOG3T6bttcCfCw
+unalias '=' 2>/dev/null
+
 unset DIR
 
 
