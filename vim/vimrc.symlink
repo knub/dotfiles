@@ -125,6 +125,7 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " Editing
 " ==================================================
 " Use colorscheme
+syntax on
 colorscheme fruidle
 " Set how many lines of history VIM has to remember
 set history=1000
