@@ -1,0 +1,21 @@
+#!/bin/sh
+input=$(cat)
+cwd=$(echo "$input" | jq -r '.cwd')
+
+# Shorten home directory to ~
+dir=$(echo "$cwd" | sed "s|^$HOME|~|")
+
+# Get folder name (last component) for a cleaner look
+folder=$(basename "$cwd")
+
+# Git branch
+branch=""
+if [ -d "$cwd/.git" ] || git -C "$cwd" rev-parse --git-dir >/dev/null 2>&1; then
+  branch=$(git -C "$cwd" symbolic-ref --short HEAD 2>/dev/null || git -C "$cwd" rev-parse --short HEAD 2>/dev/null)
+fi
+
+if [ -n "$branch" ]; then
+  printf "You are in \033[1m%s\033[0m on branch \033[1m%s\033[0m." "$dir" "$branch"
+else
+  printf "You are in \033[1m%s\033[0m." "$dir"
+fi

@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(gh *)",
+      "Bash(ls *)",
+      "Bash(cat *)"
+    ],
+    "defaultMode": "plan"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' >&2"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a' >&2"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/knub/.claude/statusline-command.sh"
+  },
+  "effortLevel": "high",
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true
+}
