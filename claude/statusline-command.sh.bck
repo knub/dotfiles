@@ -20,13 +20,25 @@ else
   printf "You are in \033[1m%s\033[0m." "$dir"
 fi
 
-# Rate limit usage (only shown when data is available)
+# Emit a percentage, turning it red when it exceeds the given threshold.
+# Uses \033[39m (default fg) so an enclosing bold attribute stays intact.
+# $1 = integer pct, $2 = threshold
+fmt_pct() {
+  if [ "$1" -gt "$2" ]; then
+    printf '\033[31m%s%%\033[39m' "$1"
+  else
+    printf '%s%%' "$1"
+  fi
+}
+
+# Rate limit usage (only shown when data is available; 7d only shown when > 60%; each value red when > 75%)
 five=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
 five_resets=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
 week=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 rate_out=""
 if [ -n "$five" ]; then
-  five_str="5h: $(printf '%.0f' "$five")%"
+  five_int=$(printf '%.0f' "$five")
+  five_str="5h: $(fmt_pct "$five_int" 75)"
   if [ -n "$five_resets" ]; then
     now=$(date +%s)
     secs_left=$(( five_resets - now ))
@@ -44,9 +56,21 @@ if [ -n "$five" ]; then
   fi
   rate_out="$five_str"
 fi
-[ -n "$week" ] && rate_out="$rate_out 7d: $(printf '%.0f' "$week")%"
+if [ -n "$week" ]; then
+  week_int=$(printf '%.0f' "$week")
+  if [ "$week_int" -gt 60 ]; then
+    rate_out="$rate_out 7d: $(fmt_pct "$week_int" 75)"
+  fi
+fi
 [ -n "$rate_out" ] && printf " | Rate limits: \033[1m%s\033[0m" "$rate_out"
 
-# Context window usage (only shown when data is available)
+# Context window usage (only shown when data is available; red when > 20%)
 ctx_used=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
-[ -n "$ctx_used" ] && printf " | \033[1mContext: $(printf '%.0f' "$ctx_used")%%\033[0m"
+if [ -n "$ctx_used" ]; then
+  ctx_int=$(printf '%.0f' "$ctx_used")
+  if [ "$ctx_int" -gt 20 ]; then
+    printf " | \033[1;31mContext: %s%%\033[0m" "$ctx_int"
+  else
+    printf " | \033[1mContext: %s%%\033[0m" "$ctx_int"
+  fi
+fi
