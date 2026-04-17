@@ -139,10 +139,11 @@ set synmaxcol=300
 " Redraw only when need to: for example not in the middle of macros
 set lazyredraw
 
-" Map Ctrl-C and Ctrl-V
-" map <C-V> "+gP
-" cmap <C-V> <C-R>+
-vnoremap <C-C> "+y
+" Yank visual selection to system clipboard.
+" Ctrl-C is unreliable as a mapping in terminal Vim because the TTY turns it
+" into SIGINT before the mapping system runs. Ctrl+Shift+C is intercepted by
+" Ghostty as its own copy shortcut. So use <leader>c (,c) instead.
+vnoremap <leader>c "+y
 
 " Use four spaces for one tab
 set tabstop=4
