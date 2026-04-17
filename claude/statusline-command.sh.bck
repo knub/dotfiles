@@ -20,14 +20,51 @@ else
   printf "You are in \033[1m%s\033[0m." "$dir"
 fi
 
-# Emit a percentage, turning it red when it exceeds the given threshold.
-# Uses \033[39m (default fg) so an enclosing bold attribute stays intact.
-# $1 = integer pct, $2 = threshold
+# Pick an ANSI fg color escape based on two thresholds: yellow when pct >= $2,
+# red when pct > $3, else empty. Uses \033[39m to restore default fg so an
+# enclosing bold attribute stays intact.
+# $1 = integer pct, $2 = yellow threshold, $3 = red threshold
+pct_color() {
+  if [ "$1" -gt "$3" ]; then
+    printf '\033[31m'
+  elif [ "$1" -ge "$2" ]; then
+    printf '\033[33m'
+  fi
+}
+
+# Emit a percentage, colored via pct_color.
+# $1 = integer pct, $2 = yellow threshold, $3 = red threshold
 fmt_pct() {
-  if [ "$1" -gt "$2" ]; then
-    printf '\033[31m%s%%\033[39m' "$1"
+  color=$(pct_color "$1" "$2" "$3")
+  if [ -n "$color" ]; then
+    printf '%s%s%%\033[39m' "$color" "$1"
   else
     printf '%s%%' "$1"
+  fi
+}
+
+# Emit a [██████░░░░]-style progressbar, colored via pct_color.
+# $1 = integer pct, $2 = yellow threshold, $3 = red threshold,
+# $4 = width (default 10), $5 = max (default 100)
+fmt_bar() {
+  pct=$1
+  yellow=$2
+  red=$3
+  width=${4:-10}
+  max=${5:-100}
+  [ "$pct" -lt 0 ] && pct=0
+  bar_pct=$pct
+  [ "$bar_pct" -gt "$max" ] && bar_pct=$max
+  filled=$(( bar_pct * width / max ))
+  bar=""
+  i=0
+  while [ "$i" -lt "$filled" ]; do bar="${bar}█"; i=$((i+1)); done
+  while [ "$i" -lt "$width" ]; do bar="${bar}░"; i=$((i+1)); done
+  color=$(pct_color "$pct" "$yellow" "$red")
+  if [ -n "$color" ]; then
+    printf '%s[%s]\033[39m' "$color" "$bar"
+  else
+    printf '[%s]' "$bar"
   fi
 }
 
@@ -38,7 +75,7 @@ week=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
 rate_out=""
 if [ -n "$five" ]; then
   five_int=$(printf '%.0f' "$five")
-  five_str="5h: $(fmt_pct "$five_int" 75)"
+  five_str="5h: $(fmt_bar "$five_int" 60 75) $(fmt_pct "$five_int" 60 75)"
   if [ -n "$five_resets" ]; then
     now=$(date +%s)
     secs_left=$(( five_resets - now ))
@@ -58,8 +95,8 @@ if [ -n "$five" ]; then
 fi
 if [ -n "$week" ]; then
   week_int=$(printf '%.0f' "$week")
-  if [ "$week_int" -gt 60 ]; then
-    rate_out="$rate_out 7d: $(fmt_pct "$week_int" 75)"
+  if [ "$week_int" -ge 60 ]; then
+    rate_out="$rate_out 7d: $(fmt_bar "$week_int" 60 75) $(fmt_pct "$week_int" 60 75)"
   fi
 fi
 [ -n "$rate_out" ] && printf " | Rate limits: \033[1m%s\033[0m" "$rate_out"
@@ -68,9 +105,5 @@ fi
 ctx_used=$(echo "$input" | jq -r '.context_window.used_percentage // empty')
 if [ -n "$ctx_used" ]; then
   ctx_int=$(printf '%.0f' "$ctx_used")
-  if [ "$ctx_int" -gt 20 ]; then
-    printf " | \033[1;31mContext: %s%%\033[0m" "$ctx_int"
-  else
-    printf " | \033[1mContext: %s%%\033[0m" "$ctx_int"
-  fi
+  printf " | \033[1mContext: %s %s\033[0m" "$(fmt_bar "$ctx_int" 20 25 10 25)" "$(fmt_pct "$ctx_int" 20 25)"
 fi
