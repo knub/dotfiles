@@ -35,3 +35,9 @@ alias sum='awk "{ sum += \$1 } END { print sum }"'
 function lsdownloads() {
 	ls ~/Downloads
 }
+
+# Reset the ath11k wifi driver (QCNFA765) when it wedges after suspend/resume
+# and 4-way WPA handshake fails with reason=2.
+function wifi-reset() {
+	sudo modprobe -r ath11k_pci ath11k && sleep 2 && sudo modprobe ath11k_pci
+}
