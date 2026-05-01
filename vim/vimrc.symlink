@@ -144,6 +144,9 @@ set lazyredraw
 " map <C-V> "+gP
 " cmap <C-V> <C-R>+
 vnoremap <C-C> "+y
+" Leader-c yanks to Mac clipboard (operator-pending, so ,cw / ,cc / ,c$ work)
+nnoremap <leader>c "*y
+vnoremap <leader>c "*y
 
 " Use four spaces for one tab
 set tabstop=4
