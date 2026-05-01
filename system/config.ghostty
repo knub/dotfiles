@@ -2,7 +2,7 @@
 theme = Builtin Tango Light
 
 # Font
-font-size = 16
+font-size = 20
 
 # Shell
 shell-integration = zsh
