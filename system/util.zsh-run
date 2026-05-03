@@ -35,3 +35,22 @@ alias sum='awk "{ sum += \$1 } END { print sum }"'
 function lsdownloads() {
 	ls ~/Downloads
 }
+
+# simple_zip <folder>
+# Creates <basename>.zip in the current directory from the given folder.
+# Resolves the output path before cd'ing, so the zip lands where you ran
+# the command, not next to the source.
+function simple_zip() {
+	if [[ $# -ne 1 ]]; then
+		echo "usage: simple_zip <folder>" >&2
+		return 2
+	fi
+	local src="${1%/}"
+	local name parent out
+	name="$(basename "$src")"
+	parent="$(dirname "$src")"
+	out="$PWD/${name}.zip"
+	[[ -d "$src" ]] || { echo "simple_zip: not a directory: $src" >&2; return 1; }
+	[[ -e "$out" ]] && { echo "simple_zip: refusing to overwrite: $out" >&2; return 1; }
+	(cd "$parent" && zip -ry "$out" "$name" -x "*/.DS_Store")
+}
