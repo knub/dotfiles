@@ -15,9 +15,22 @@ if [ -d "$cwd/.git" ] || git -C "$cwd" rev-parse --git-dir >/dev/null 2>&1; then
 fi
 
 if [ -n "$branch" ]; then
-  printf "You are in \033[1m%s\033[0m on branch \033[1m%s\033[0m." "$dir" "$branch"
+  printf "\033[1m%s\033[0m (\033[1m%s\033[0m)" "$dir" "$branch"
 else
-  printf "You are in \033[1m%s\033[0m." "$dir"
+  printf "\033[1m%s\033[0m" "$dir"
+fi
+
+# Active model (first word of display name, e.g. "Opus", "Fable") with an emoji
+model=$(echo "$input" | jq -r '.model.display_name // empty' | awk '{print $1}')
+if [ -n "$model" ]; then
+  case "$model" in
+    Fable)  emoji="🐉" ;;
+    Opus)   emoji="🦁" ;;
+    Sonnet) emoji="🐺" ;;
+    Haiku)  emoji="🐁" ;;
+    *)      emoji="🤖" ;;
+  esac
+  printf " | %s \033[1m%s\033[0m" "$emoji" "$model"
 fi
 
 # Pick an ANSI fg color escape based on two thresholds: yellow when pct >= $2,
