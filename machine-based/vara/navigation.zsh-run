@@ -1,3 +1,4 @@
 alias cdcore="cd ~/vara/core"
 alias cddaytoday="cd ~/vara/day-to-day"
+alias cdpersonaldaytoday="cd ~/Repositories/personal-day-to-day"
 alias cdcontext="cd ~/vara/context"
