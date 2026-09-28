@@ -30,6 +30,7 @@ alias grpo='git remote prune origin'
 alias grh='git reset HEAD'
 alias gt='git stash'
 alias gtl='git stash list'
+alias gbd='git branch -D'
 alias gtlrt='git stash -q && git pull --rebase --quiet && gl && git stash pop -q'
 alias gcaapf='git add . && git-amend && gp -f' # git commit all amend push force
 
